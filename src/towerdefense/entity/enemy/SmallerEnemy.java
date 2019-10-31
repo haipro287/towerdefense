@@ -1,4 +1,6 @@
 package towerdefense.entity.enemy;
 
-public class SmallerEnemy implements Enemy {
+import towerdefense.entity.GameEntity;
+
+public class SmallerEnemy {
 }
