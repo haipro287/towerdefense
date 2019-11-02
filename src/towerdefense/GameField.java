@@ -1,8 +1,8 @@
 package towerdefense;
 
-import towerdefense.drawer.GameDrawer;
-import towerdefense.drawer.tile.RoadDrawer;
 import towerdefense.entity.GameEntity;
+import towerdefense.entity.enemy.AbstractEnemy;
+import towerdefense.entity.enemy.NormalEnemy;
 import towerdefense.entity.tile.road.Road;
 import towerdefense.entity.tile.tower.NormalTower;
 import towerdefense.listener.GameListener;
@@ -14,13 +14,14 @@ import java.util.List;
 
 public class GameField {
     private GameStage gameStage;
-    private List<GameEntity> gameEntities;
-    private GameDrawer gameDrawer;
+    private List<GameEntity> tiles;
+    private List<AbstractEnemy> enemies = new ArrayList<>();
     private GameListener gameListener;
 
     public GameField() throws FileNotFoundException {
-        gameEntities = GameStage.loadMap("src/resources/map1.txt");
-        gameEntities.add(new NormalTower(0, 17*GameConfig.TILE_SIZE, 17*GameConfig.TILE_SIZE,32*2, 32*2));
+        tiles = GameStage.loadMap("src/resources/map1.txt");
+        tiles.add(new NormalTower(0, 17 * GameConfig.TILE_SIZE, 17 * GameConfig.TILE_SIZE, 32 * 2, 32 * 2));
+        enemies.add(new NormalEnemy(0, 0, 0, 32, 32));
     }
 
     public GameStage getGameStage() {
@@ -29,14 +30,6 @@ public class GameField {
 
     public void setGameStage(GameStage gameStage) {
         this.gameStage = gameStage;
-    }
-
-    public GameDrawer getGameDrawer() {
-        return gameDrawer;
-    }
-
-    public void setGameDrawer(GameDrawer gameDrawer) {
-        this.gameDrawer = gameDrawer;
     }
 
     public GameListener getGameListener() {
@@ -48,9 +41,17 @@ public class GameField {
     }
 
     public void draw(Graphics2D g2d) {
-        for (GameEntity entity : gameEntities) {
-            entity.getX();
+        for (GameEntity entity : tiles) {
             entity.draw(g2d);
+        }
+        for (GameEntity entity : enemies) {
+            entity.draw(g2d);
+        }
+    }
+
+    public void run() {
+        for (AbstractEnemy entity : enemies) {
+            entity.setX(entity.getX() + 1);
         }
     }
 }

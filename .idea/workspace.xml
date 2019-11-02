@@ -1,84 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/map1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/GameFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/AbstractDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/EntityDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/GameDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/bullet/BulletDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/enemy/EnemyDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/tile/MountainDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/tile/RoadDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/drawer/tile/TowerDrawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/Updatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/bullet/AbstractBullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/AbstractTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/mountain/Mountain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/AbstractTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/listener/GameListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="Create a map from txt file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/canvas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/Bullet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/GameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/GameEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Drawable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/characteristic/Attackable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Attackable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/characteristic/Colidable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Colidable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/characteristic/Destroyable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Destroyable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/characteristic/Moveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Moveable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/AbstractDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/EntityDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/GameDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/ImageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/bullet/BulletDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/enemy/EnemyDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/tile/MountainDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/tile/RoadDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/drawer/tile/TowerDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/Moveable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/NormalEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/GameTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/Mountain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Road.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Spawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/MachineGunTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/Tower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/canvas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/GameController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/Bullet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameStage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/characteristic/Attackable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/characteristic/Colidable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/characteristic/Destroyable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/characteristic/Moveable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/Enemy.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/GameTile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/Mountain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Road.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Spawner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Spawner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Target.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/MachineGunTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/NormalTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/Tower.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +50,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/Java/Project/Game" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Week8" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -180,6 +119,14 @@
       <option name="presentableId" value="Default" />
       <updated>1570889471636</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create a map from txt file">
+      <created>1572521896095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572521896096</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,5 +146,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/towerdefense" />
     </ignored-roots>
+    <MESSAGE value="Create a map from txt file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a map from txt file" />
   </component>
 </project>
