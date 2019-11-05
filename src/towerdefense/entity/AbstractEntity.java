@@ -4,12 +4,12 @@ import java.awt.*;
 
 public abstract class AbstractEntity implements GameEntity {
     private long createdTick;
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private int width;
     private int height;
 
-    public AbstractEntity(long createdTick, int x, int y, int width, int height) {
+    public AbstractEntity(long createdTick, double x, double y, int width, int height) {
         this.createdTick = createdTick;
         this.x = x;
         this.y = y;
@@ -26,20 +26,20 @@ public abstract class AbstractEntity implements GameEntity {
     }
 
     @Override
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
     @Override
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(double y) {
         this.y = y;
     }
 
@@ -63,11 +63,6 @@ public abstract class AbstractEntity implements GameEntity {
 
     @Override
     public void draw(Graphics2D g2d) {
-
-    }
-
-    @Override
-    public void update() {
 
     }
 }

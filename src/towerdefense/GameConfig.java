@@ -1,5 +1,8 @@
 package towerdefense;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public final class GameConfig {
     public static final String GAME_NAME = "Tower Defense";
     public static final int TILE_SIZE = 32;

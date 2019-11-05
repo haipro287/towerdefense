@@ -3,9 +3,10 @@ package towerdefense;
 import towerdefense.entity.GameEntity;
 import towerdefense.entity.tile.mountain.Mountain;
 import towerdefense.entity.tile.road.Road;
+import towerdefense.entity.tile.road.Spawner;
+import towerdefense.entity.tile.road.Target;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,19 @@ public class GameStage {
                 int temp = sc.nextInt();
                 switch (temp) {
                     case 0: {
-                        gameEntities.add(new Mountain(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+                        gameEntities.add(new Mountain(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
                         break;
                     }
                     case 1: {
-                        gameEntities.add(new Road(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+                        gameEntities.add(new Road(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
+                        break;
+                    }
+                    case 2: {
+                        gameEntities.add(new Spawner(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
+                        break;
+                    }
+                    case 3: {
+                        gameEntities.add(new Target(0, j * GameConfig.TILE_SIZE, i * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
                         break;
                     }
                 }

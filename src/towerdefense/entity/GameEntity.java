@@ -1,8 +1,9 @@
 package towerdefense.entity;
 
-public interface GameEntity extends Drawable, Updatable {
-    int getX();
-    int getY();
+public interface GameEntity extends Drawable {
+    double getX();
+
+    double getY();
     int getWidth();
     int getHeight();
 }
