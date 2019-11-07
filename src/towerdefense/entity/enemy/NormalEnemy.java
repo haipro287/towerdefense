@@ -1,15 +1,16 @@
 package towerdefense.entity.enemy;
 
+import towerdefense.GameConfig;
 import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
 
 public class NormalEnemy extends AbstractEnemy {
-    public NormalEnemy(long createdTick, int x, int y, int width, int height) {
-        super(createdTick, x, y, width, height);
-        super.setHp(100);
-        super.setSpeed(0.8);
-        super.setArmor(10);
+    public NormalEnemy(long createdTick, int x, int y, int width, int height, int flag) {
+        super(createdTick, x, y, width, height, flag);
+        super.setHp(GameConfig.NORMAL_ENEMY_HP);
+        super.setSpeed(GameConfig.NORMAL_ENEMY_SPEED);
+        super.setArmor(GameConfig.NORMAL_ENEMY_ARMOR);
     }
 
     private static Image image = ImageLoader.getImage("src/resources/Sprites/run/player-run-1.png");
@@ -21,8 +22,4 @@ public class NormalEnemy extends AbstractEnemy {
         g2d.drawImage(image, (int) getX(), (int) getY(), getWidth(), getHeight(), null);
     }
 
-    @Override
-    public void move() {
-        setX(getX() + getSpeed());
-    }
 }

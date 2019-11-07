@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public abstract class AbstractTower extends AbstractTile implements Attackable, Collidable {
     private int radius;
     private int attackSpeed;
+    private double angle;
 
     public AbstractTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
@@ -40,6 +41,14 @@ public abstract class AbstractTower extends AbstractTile implements Attackable, 
     }
 
 
+    public double getAngle() {
+        return angle;
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
+    }
+
     private long t;
 
     @Override
@@ -49,13 +58,18 @@ public abstract class AbstractTower extends AbstractTile implements Attackable, 
             return;
         }
         t = T;
-        bullets.add(new NormalBullet(0, getX(), getY(), 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
+        bullets.add(new NormalBullet(this, 0, getX(), getY(), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, this.angle));
     }
 
     public boolean checkInvasion(ArrayList<AbstractEnemy> enemies) {
         int count = 0;
         for (int i = 0; i < enemies.size(); i++) {
             if (collider().intersects((Rectangle2D) enemies.get(i).collider())) {
+                double xDistance = (double) enemies.get(i).getCenter().x - this.getCenter().x;
+                double yDistance = (double) enemies.get(i).getCenter().y - this.getCenter().y;
+
+                this.angle = Math.atan(Math.abs((double) (enemies.get(i).getCenter().y - this.getCenter().y) / (enemies.get(i).getCenter().x - this.getCenter().x)));
+                System.out.println(angle);
                 return true;
             }
         }

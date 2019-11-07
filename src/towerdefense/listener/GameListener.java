@@ -1,7 +1,7 @@
 package towerdefense.listener;
 
 import towerdefense.GameConfig;
-import towerdefense.GameField;
+import towerdefense.GameState;
 import towerdefense.entity.tile.tower.NormalTower;
 
 import java.awt.event.KeyEvent;
@@ -11,10 +11,10 @@ import java.awt.event.MouseListener;
 
 public class GameListener {
     private int mouseFlag = 0;
-    private GameField gameField;
+    private GameState gameState;
 
-    public GameListener(GameField gameField) {
-        this.gameField = gameField;
+    public GameListener(GameState gameState) {
+        this.gameState = gameState;
     }
 
     private MouseListener mouseListener = new MouseListener() {
@@ -35,7 +35,7 @@ public class GameListener {
         @Override
         public void mouseReleased(MouseEvent e) {
             if (mouseFlag == 1) {
-                gameField.addTower(new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+                gameState.addTower(new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
             }
             mouseFlag = 0;
         }

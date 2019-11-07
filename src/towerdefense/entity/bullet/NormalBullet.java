@@ -1,20 +1,16 @@
 package towerdefense.entity.bullet;
 
+import towerdefense.GameConfig;
+import towerdefense.entity.tile.tower.AbstractTower;
+
 import java.awt.*;
 
 public class NormalBullet extends AbstractBullet {
-    private int speed;
-    private int damage;
 
-    public NormalBullet(long createdTick, double x, double y, int width, int height) {
-        super(createdTick, x, y, width, height);
-        setSpeed(2);
-        setDamage(100);
-    }
-
-    @Override
-    public void move() {
-        setX(getX() + getSpeed());
+    public NormalBullet(AbstractTower tower, long createdTick, double x, double y, int width, int height, double angle) {
+        super(tower, createdTick, x, y, width, height, angle);
+        setSpeed(GameConfig.NORMAL_BULLET_SPEED);
+        setDamage(GameConfig.NORMAL_BULLET_DAMAGE);
     }
 
     @Override

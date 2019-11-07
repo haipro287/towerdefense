@@ -11,8 +11,8 @@ public class NormalTower extends AbstractTower {
 
     public NormalTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
-        super.setRadius(300);
-        super.setAttackSpeed(300);
+        super.setRadius(GameConfig.NORMAL_TOWER_RADIUS);
+        super.setAttackSpeed(GameConfig.NORMAL_TOWER_ATTACK_SPEED);
     }
 
     @Override

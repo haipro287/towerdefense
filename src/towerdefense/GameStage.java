@@ -6,6 +6,7 @@ import towerdefense.entity.tile.road.Road;
 import towerdefense.entity.tile.road.Spawner;
 import towerdefense.entity.tile.road.Target;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -42,4 +43,15 @@ public class GameStage {
         return gameEntities;
     }
 
+    public static List<Point> loadWayPoints(String filename) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File(filename));
+        List<Point> wayPoints = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            sc.nextLine();
+        }
+        while (sc.hasNext()) {
+            wayPoints.add(new Point(sc.nextInt(), sc.nextInt()));
+        }
+        return wayPoints;
+    }
 }
