@@ -22,22 +22,22 @@ public final class GameConfig {
 
 
     public static final int NORMAL_TOWER_RADIUS = 250;
-    public static final int NORMAL_TOWER_ATTACK_SPEED = 300;
+    public static final int NORMAL_TOWER_ATTACK_SPEED = 500;
 
     public static final int SNIPER_TOWER_RADIUS = 400;
-    public static final int SNIPER_TOWER_ATTACK_SPEED = 500;
+    public static final int SNIPER_TOWER_ATTACK_SPEED = 2000;
 
     public static final int MACHINE_GUN_TOWER_RADIUS = 200;
     public static final int MACHINE_GUN_TOWER_ATTACK_SPEED = 100;
 
-    public static final double NORMAL_BULLET_SPEED = 300.0/GAME_FPS;
-    public static final int NORMAL_BULLET_DAMAGE = 100;
+    public static final double NORMAL_BULLET_SPEED = 400.0 / GAME_FPS;
+    public static final int NORMAL_BULLET_DAMAGE = 50;
 
-    public static final double SNIPER_BULLET_SPEED = 3;
+    public static final double SNIPER_BULLET_SPEED = 700.0 / GAME_FPS;
     public static final int SNIPER_BULLET_DAMAGE = 200;
 
-    public static final double MACHINE_GUN_BULLET_SPEED = 2;
-    public static final int MACHINE_GUN_BULLET_DAMAGE = 50;
+    public static final double MACHINE_GUN_BULLET_SPEED = 400.0 / GAME_FPS;
+    public static final int MACHINE_GUN_BULLET_DAMAGE = 5;
 
     public static final int NORMAL_ENEMY_HP = 100;
     public static final double NORMAL_ENEMY_SPEED = 60.0/GAME_FPS;

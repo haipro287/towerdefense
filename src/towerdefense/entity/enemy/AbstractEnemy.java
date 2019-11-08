@@ -2,12 +2,13 @@ package towerdefense.entity.enemy;
 
 import towerdefense.GameConfig;
 import towerdefense.entity.*;
+import towerdefense.entity.bullet.AbstractBullet;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
-public abstract class AbstractEnemy extends AbstractEntity implements Movable, Vulnerable, Collidable, Destroyable {
-    private int Hp;
+public abstract class AbstractEnemy extends AbstractEntity implements Movable, Vulnerable, Destroyable {
+    private int hp;
     private double speed;
     private int armor;
     private String Item;
@@ -22,11 +23,11 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
 
     @Override
     public int getHp() {
-        return Hp;
+        return hp;
     }
 
     public void setHp(int hp) {
-        Hp = hp;
+        this.hp = hp;
     }
 
     @Override
@@ -103,6 +104,23 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
         if (getX() > GameConfig.SCREEN_WIDTH || getX() < 0 || getY() > GameConfig.SCREEN_HEIGHT || getY() < 0) {
             return true;
         }
-            return false;
+        return false;
+    }
+
+    @Override
+    public boolean defeat() {
+        if (hp <= 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean injure(AbstractBullet bullet) {
+        if (collider().intersects((Rectangle2D) bullet.collider())) {
+            hp = hp - bullet.getDamage();
+            System.out.println();
+            return true;
+        }
+        return false;
     }
 }

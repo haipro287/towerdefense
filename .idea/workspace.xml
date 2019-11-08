@@ -2,128 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/WaterTiles/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/MenuState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/resourcesloader/SoundLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/bullet/MachineBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/bullet/SniperBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/map1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/Destroyable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Destroyable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/GameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/GameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/Updatable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/Vulnerable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/Vulnerable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/bullet/AbstractBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/bullet/AbstractBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/bullet/NormalBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/mountain/Mountain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/mountain/Mountain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/road/Road.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/AbstractTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/AbstractTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/MachineGunTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/listener/GameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/listener/GameListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/listener/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/GameEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/road/Road.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/MachineGunTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -271,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572975768266</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change project structure &#10;- game panel, game state,...&#10;- enemeis can follow the path">
+      <created>1573148029013</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573148029013</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +205,7 @@
     <MESSAGE value="delete drawer package&#10;add drawable interface to game entity" />
     <MESSAGE value="major update" />
     <MESSAGE value="add enemy image" />
-    <option name="LAST_COMMIT_MESSAGE" value="add enemy image" />
+    <MESSAGE value="change project structure &#10;- game panel, game state,...&#10;- enemeis can follow the path" />
+    <option name="LAST_COMMIT_MESSAGE" value="change project structure &#10;- game panel, game state,...&#10;- enemeis can follow the path" />
   </component>
 </project>

@@ -38,12 +38,12 @@ public class GamePanel extends JPanel implements Runnable {
             tick();
             repaint();
             elapsed = System.nanoTime() - start;
-            System.out.println(elapsed);
+//            System.out.println(elapsed);
             wait = (GameConfig.GAME_NSPF - elapsed)/1000000;
             if (wait <= 0) {
                 wait = GameConfig.GAME_NSPF/1000000;
             }
-            System.out.println(wait);
+//            System.out.println(wait);
             try {
                 Thread.sleep(wait);
             } catch (InterruptedException e) {

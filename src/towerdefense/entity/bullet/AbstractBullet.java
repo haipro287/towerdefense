@@ -7,6 +7,7 @@ import towerdefense.entity.Movable;
 import towerdefense.entity.tile.tower.AbstractTower;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public abstract class AbstractBullet extends AbstractEntity implements Movable, Destroyable {
     private double speed;
@@ -14,11 +15,13 @@ public abstract class AbstractBullet extends AbstractEntity implements Movable, 
     private double angle;
     private Point center;
     private AbstractTower tower;
+    private int flag;
 
     public AbstractBullet(AbstractTower tower, long createdTick, double x, double y, int width, int height, double angle) {
         super(createdTick, x, y, width, height);
         this.angle = angle;
         this.tower = tower;
+        this.flag = 0;
     }
 
     @Override
@@ -54,6 +57,14 @@ public abstract class AbstractBullet extends AbstractEntity implements Movable, 
         this.angle = angle;
     }
 
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+
     @Override
     public boolean destroy() {
         if (getX() > GameConfig.SCREEN_WIDTH - 15 || getX() < 0 || getY() > GameConfig.SCREEN_HEIGHT || getY() < 0) {
@@ -64,23 +75,33 @@ public abstract class AbstractBullet extends AbstractEntity implements Movable, 
 
     @Override
     public void move() {
-        if (getCenter().x < tower.getCenter().x) {
-            setX(getX() - getSpeed() * Math.cos(angle));
-            if (getCenter().y < tower.getCenter().y) {
+        switch (flag) {
+            case 1: {
+                setX(getX() - getSpeed() * Math.cos(angle));
                 setY(getY() - getSpeed() * Math.sin(angle));
-            } else if (getCenter().y > tower.getCenter().y) {
-                setY(getY() + getSpeed() * Math.sin(angle));
+                break;
             }
-        } else if (getCenter().x > tower.getCenter().x) {
-            setX(getX() + getSpeed() * Math.cos(angle));
-            if (getCenter().y < tower.getCenter().y) {
-                setY(getY() - getSpeed() * Math.sin(angle));
-            } else if (getCenter().y > tower.getCenter().y) {
+            case 2: {
+                setX(getX() - getSpeed() * Math.cos(angle));
                 setY(getY() + getSpeed() * Math.sin(angle));
+                break;
+            }
+            case 3: {
+                setX(getX() + getSpeed() * Math.cos(angle));
+                setY(getY() - getSpeed() * Math.sin(angle));
+                break;
+            }
+            case 4: {
+                setX(getX() + getSpeed() * Math.cos(angle));
+                setY(getY() + getSpeed() * Math.sin(angle));
+                break;
             }
         }
-
-
         setCenter();
+    }
+
+    @Override
+    public Shape collider() {
+        return new Rectangle2D.Double(getX(), getY(), getWidth(), getHeight());
     }
 }

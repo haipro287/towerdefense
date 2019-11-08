@@ -5,7 +5,9 @@ import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.enemy.AbstractEnemy;
 import towerdefense.entity.enemy.NormalEnemy;
 import towerdefense.entity.tile.tower.AbstractTower;
+import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
+import towerdefense.entity.tile.tower.SniperTower;
 import towerdefense.listener.GameListener;
 
 import java.awt.*;
@@ -13,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameState extends State{
+public class GameState extends State {
     private GameStage gameStage;
     private GameListener gameListener;
     private List<GameEntity> tiles;
@@ -26,7 +28,6 @@ public class GameState extends State{
 
     private long start;
 
-
     public GameState() throws FileNotFoundException {
         gameListener = new GameListener(this);
         start = System.nanoTime();
@@ -35,8 +36,10 @@ public class GameState extends State{
         wayPoints = GameStage.loadWayPoints("src/resources/map1.txt");
         towers.add(new NormalTower(0, 17 * GameConfig.TILE_SIZE, 18 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
         bullets.add(new ArrayList<>());
-//        towers.add(new NormalTower(0, 5 * GameConfig.TILE_SIZE, 5 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
+//        towers.add(new SniperTower(0, 5 * GameConfig.TILE_SIZE, 5 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
 //        bullets.add(new ArrayList<>());
+        towers.add(new MachineGunTower(0, 12 * GameConfig.TILE_SIZE, 5 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
+        bullets.add(new ArrayList<>());
     }
 
     public GameStage getGameStage() {
@@ -73,14 +76,20 @@ public class GameState extends State{
     @Override
     public void run() {
         long cur = System.nanoTime();
-        System.out.println(cur-start);
-        if ((cur-start) % 10000 == 0 &&  enemies.size() <=10 ) {
+        System.out.println(cur - start);
+        if ((cur - start) % 1000 == 0 && enemies.size() <= 100) {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
         for (int i = enemies.size() - 1; i >= 0; i--) {
-            if (enemies.get(i).destroy()) {
+            for (ArrayList<AbstractBullet> bullet : bullets) {
+                for (int i1 = bullet.size() - 1; i1 >= 0; i1--) {
+                    if (enemies.get(i).injure(bullet.get(i1))) {
+                        bullet.remove(bullet.get(i1));
+                    }
+                }
+            }
+            if (enemies.get(i).destroy() || enemies.get(i).defeat()) {
                 enemies.remove(enemies.get(i));
-                invadedEnemy++;
             }
         }
         for (List<AbstractBullet> bullet : bullets) {

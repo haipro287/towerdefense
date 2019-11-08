@@ -13,10 +13,13 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
-public abstract class AbstractTower extends AbstractTile implements Attackable, Collidable {
+public abstract class AbstractTower extends AbstractTile implements Attackable {
     private int radius;
     private int attackSpeed;
     private double angle;
+
+    private double xDistance;
+    private double yDistance;
 
     public AbstractTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
@@ -49,27 +52,30 @@ public abstract class AbstractTower extends AbstractTile implements Attackable, 
         this.angle = angle;
     }
 
-    private long t;
+    public double getxDistance() {
+        return xDistance;
+    }
 
-    @Override
-    public void attack(ArrayList<AbstractBullet> bullets, int attackSpeed) {
-        long T = System.currentTimeMillis();
-        if (T - t <= attackSpeed) {
-            return;
-        }
-        t = T;
-        bullets.add(new NormalBullet(this, 0, getX(), getY(), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, this.angle));
+    public void setxDistance(double xDistance) {
+        this.xDistance = xDistance;
+    }
+
+    public double getyDistance() {
+        return yDistance;
+    }
+
+    public void setyDistance(double yDistance) {
+        this.yDistance = yDistance;
     }
 
     public boolean checkInvasion(ArrayList<AbstractEnemy> enemies) {
         int count = 0;
         for (int i = 0; i < enemies.size(); i++) {
             if (collider().intersects((Rectangle2D) enemies.get(i).collider())) {
-                double xDistance = (double) enemies.get(i).getCenter().x - this.getCenter().x;
-                double yDistance = (double) enemies.get(i).getCenter().y - this.getCenter().y;
+                xDistance = (double) enemies.get(i).getCenter().x - this.getCenter().x;
+                yDistance = (double) enemies.get(i).getCenter().y - this.getCenter().y;
 
                 this.angle = Math.atan(Math.abs((double) (enemies.get(i).getCenter().y - this.getCenter().y) / (enemies.get(i).getCenter().x - this.getCenter().x)));
-                System.out.println(angle);
                 return true;
             }
         }

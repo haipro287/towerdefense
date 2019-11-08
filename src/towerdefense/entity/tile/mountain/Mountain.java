@@ -4,13 +4,14 @@ import towerdefense.resourcesloader.ImageLoader;
 import towerdefense.entity.tile.AbstractTile;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class Mountain extends AbstractTile {
+    private static Image image = ImageLoader.getImage("src/resources/Sprites/grass_tile_1.png");
+
     public Mountain(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
     }
-
-    private static Image image = ImageLoader.getImage("src/resources/Sprites/grass_tile_1.png");
 
     @Override
     public void draw(Graphics2D g2d) {
@@ -18,5 +19,10 @@ public class Mountain extends AbstractTile {
 //        g2d.fillRect(getX(), getY(), getWidth(), getHeight());
 
         g2d.drawImage(image, (int) getX(), (int) getY(), getWidth(), getHeight(), null);
+    }
+
+    @Override
+    public Shape collider() {
+        return new Rectangle2D.Double(getX(), getY(), getWidth(), getHeight());
     }
 }
