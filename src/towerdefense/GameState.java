@@ -9,11 +9,14 @@ import towerdefense.entity.tile.tower.NormalTower;
 import towerdefense.listener.GameListener;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
-public class GameState extends State{
+public class GameState extends State implements MouseListener {
     private GameStage gameStage;
     private GameListener gameListener;
     private List<GameEntity> tiles;
@@ -47,7 +50,6 @@ public class GameState extends State{
         this.gameStage = gameStage;
     }
 
-    @Override
     public void draw(Graphics2D g2d) {
         for (GameEntity entity : tiles) {
             entity.draw(g2d);
@@ -65,6 +67,31 @@ public class GameState extends State{
         }
     }
 
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        super.mouseClicked(e);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        super.mousePressed(e);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        super.mouseReleased(e);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        super.mouseEntered(e);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        super.mouseExited(e);
+    }
+
     public void addTower(AbstractTower tower) {
         towers.add(tower);
         bullets.add(new ArrayList<>());
@@ -73,7 +100,7 @@ public class GameState extends State{
     @Override
     public void run() {
         long cur = System.nanoTime();
-        System.out.println(cur-start);
+        //System.out.println(cur-start);
         if ((cur-start) % 10000 == 0 &&  enemies.size() <=10 ) {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
