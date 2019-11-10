@@ -4,11 +4,15 @@ import towerdefense.GameConfig;
 import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.NormalBullet;
 import towerdefense.entity.bullet.SniperBullet;
+import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 public class SniperTower extends AbstractTower {
+
+    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile206.png");
+
     public SniperTower(long createdTick, int x, int y, int width, int height) {
         super(createdTick, x, y, width, height);
         super.setRadius(GameConfig.SNIPER_TOWER_RADIUS);

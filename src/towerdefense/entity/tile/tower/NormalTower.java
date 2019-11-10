@@ -3,11 +3,15 @@ package towerdefense.entity.tile.tower;
 import towerdefense.GameConfig;
 import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.NormalBullet;
+import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 public class NormalTower extends AbstractTower {
+
+    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile249.png");
 
     public NormalTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
@@ -17,8 +21,10 @@ public class NormalTower extends AbstractTower {
 
     @Override
     public void draw(Graphics2D g2d) {
-        g2d.setPaint(Color.BLUE);
+        AffineTransform backup = g2d.getTransform();
         super.draw(g2d);
+        g2d.drawImage(image, (int) getX(), (int) getY(), getWidth(), getHeight(), null);
+        g2d.setTransform(backup);
     }
 
     private long t;
@@ -32,14 +38,15 @@ public class NormalTower extends AbstractTower {
         t = T;
         AbstractBullet bullet = new NormalBullet(this, 0, getCenter().x, getCenter().y, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, getAngle());
         if (getxDistance() <= 0 && getyDistance() <= 0) {
-            bullet.setFlag(1);
+            setFlag(1);
         } else if (getxDistance() <= 0 && getyDistance() >= 0) {
-            bullet.setFlag(2);
+            setFlag(2);
         } else if (getxDistance() >= 0 && getyDistance() <= 0) {
-            bullet.setFlag(3);
+            setFlag(3);
         } else if (getxDistance() >= 0 && getyDistance() >= 0) {
-            bullet.setFlag(4);
+            setFlag(4);
         }
+        bullet.setFlag(getFlag());
         bullets.add(bullet);
     }
 }

@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class Road extends AbstractTile {
-    private static Image image = ImageLoader.getImage("src/resources/Sprites/sand_tile.png");
+    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile236.png");
 
     public Road(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
