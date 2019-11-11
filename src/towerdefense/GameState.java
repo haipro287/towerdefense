@@ -33,7 +33,9 @@ public class GameState extends State implements MouseListener {
 
     private long start;
 
-    public GameState() throws FileNotFoundException {
+    public GameState(GameController gameController) throws FileNotFoundException {
+        //gameListener = new GameListener(this);
+        super(gameController);
         start = System.nanoTime();
         mouseFlag = 0;
         invadedEnemy = 0;
@@ -75,6 +77,10 @@ public class GameState extends State implements MouseListener {
             for (AbstractBullet b : bullet) {
                 b.draw(g2d);
             }
+        }
+        g2d.drawImage(pauseButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
+        if (isPauseButton == true) {
+            g2d.drawImage(pauseButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
         }
     }
 
@@ -184,6 +190,11 @@ public class GameState extends State implements MouseListener {
                 mouseFlag = 3;
             }
         }
+        if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
+            if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
+                isPauseButton = true;
+            }
+        }
     }
 
     @Override
@@ -212,6 +223,15 @@ public class GameState extends State implements MouseListener {
             }
         }
         mouseFlag = 0;
+        if(isPauseButton == true) {
+            if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
+                if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
+                    //gameController.states.pop();
+                    gameController.states.push(new PauseState(gameController));
+                }
+            }
+            isPauseButton = false;
+        }
     }
 
     @Override
