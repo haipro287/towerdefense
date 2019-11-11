@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 
 import static towerdefense.GameConfig.SCREEN_HEIGHT;
 import static towerdefense.GameConfig.SCREEN_WIDTH;
+import static towerdefense.UILoader.*;
 
 public class MenuState extends State implements MouseListener {
 
@@ -18,38 +19,29 @@ public class MenuState extends State implements MouseListener {
         super(gameController);
     }
 
-    private static boolean isPlayButton = false;
-    private static boolean isQuitButton = false;
-    private static Image imageMainMenu = ImageLoader.getImage("src/resources/Sprites/mainMenuCut.png");
-    private static Image imagePlayButton = ImageLoader.getImage("src/resources/Sprites/playButton.png");
-    private static Image imageQuitButton = ImageLoader.getImage("src/resources/Sprites/quitButton.png");
-    private static Image imagePlayButtonClick = ImageLoader.getImage("src/resources/Sprites/playButtonClick.png");
-    private static Image imageQuitButtonClick = ImageLoader.getImage("src/resources/Sprites/quitButtonClick.png");
-
-    private static Image imageOfMenu = ImageLoader.getImage("src/resources/Sprites/Sample2.png");
-
     public void run() {
 
     }
 
     public void draw(Graphics2D g2d) {
         g2d.drawImage(imageOfMenu, 0, 0, SCREEN_WIDTH + 200, SCREEN_HEIGHT + 39, null);
-        g2d.drawImage(imageMainMenu, SCREEN_WIDTH / 3 + 10, 100, 500, 368, null);
-        g2d.drawImage(imagePlayButton, 445, 195, 270, 115, null);
-        g2d.drawImage(imageQuitButton, 445, 330, 270, 115, null);
+        g2d.drawImage(mainMenu, SCREEN_WIDTH / 3 + 10, 100, 500, 368, null);
+        g2d.drawImage(playButton, 445, 195, 270, 115, null);
         if (isPlayButton) {
-            g2d.drawImage(imagePlayButtonClick, 445, 195, 270, 115, null);
+            g2d.drawImage(playButtonClick, 445, 195, 270, 115, null);
         }
+        g2d.drawImage(quitButton, 445, 330, 270, 115, null);
         if (isQuitButton) {
-            g2d.drawImage(imageQuitButtonClick, 445, 330, 270, 115, null);
+            g2d.drawImage(quitButtonClick, 445, 330, 270, 115, null);
         }
     }
 
+    @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println(e.getX());
         System.out.println(e.getY());
     }
-
+    @Override
     public void mousePressed(MouseEvent e) {
         if (e.getX() >= 445 && e.getX() <= 445 + 270) {
             if (e.getY() >= 195 && e.getY() <= 195 + 115) {
@@ -65,7 +57,7 @@ public class MenuState extends State implements MouseListener {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
                 if (e.getY() >= 195 && e.getY() <= 195 + 115) {
                     try {
-                        gameController.states.push(new GameState());
+                        gameController.states.push(new GameState(gameController));
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }

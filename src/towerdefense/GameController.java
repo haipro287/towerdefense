@@ -6,8 +6,6 @@ import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.util.Stack;
 
-import static towerdefense.MenuState.isPlayButton;
-
 public class GameController {
     public Stack<State> states;
 

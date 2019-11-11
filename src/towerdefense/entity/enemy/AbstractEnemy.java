@@ -118,7 +118,7 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
     public boolean injure(AbstractBullet bullet) {
         if (collider().intersects((Rectangle2D) bullet.collider())) {
             hp = hp - bullet.getDamage();
-            System.out.println();
+//            System.out.println();
             return true;
         }
         return false;
