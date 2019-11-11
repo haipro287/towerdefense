@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class Mountain extends AbstractTile {
-    private static Image image = ImageLoader.getImage("src/resources/Sprites/grass_tile_1.png");
+    private static Image image = ImageLoader.getImage("src/resources/Retina/tileGrass1.png");
 
     public Mountain(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);

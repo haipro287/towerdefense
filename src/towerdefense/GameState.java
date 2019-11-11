@@ -4,31 +4,29 @@ import towerdefense.entity.GameEntity;
 import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.enemy.AbstractEnemy;
 import towerdefense.entity.enemy.NormalEnemy;
+import towerdefense.entity.tile.AbstractTile;
+import towerdefense.entity.tile.road.Road;
 import towerdefense.entity.tile.tower.AbstractTower;
 import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
-import towerdefense.entity.tile.tower.SniperTower;
-import towerdefense.resourcesloader.ImageLoader;
-
-import static towerdefense.UILoader.*;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Rectangle2D;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class GameState extends State implements MouseListener {
     private GameStage gameStage;
-    //private GameListener gameListener;
-    private List<GameEntity> tiles;
+    private List<ArrayList<AbstractTile>> tiles;
     private List<AbstractTower> towers = new ArrayList<>();
     private List<AbstractEnemy> enemies = new ArrayList<>();
     private List<ArrayList<AbstractBullet>> bullets = new ArrayList<>();
     private List<Point> wayPoints = new ArrayList<>();
 
+    private int mouseFlag;
     private int invadedEnemy;
     private int mouseFlag = 0;
 
@@ -38,6 +36,7 @@ public class GameState extends State implements MouseListener {
         //gameListener = new GameListener(this);
         super(gameController);
         start = System.nanoTime();
+        mouseFlag = 0;
         invadedEnemy = 0;
         tiles = GameStage.loadMap("src/resources/map1.txt");
         wayPoints = GameStage.loadWayPoints("src/resources/map1.txt");
@@ -58,15 +57,27 @@ public class GameState extends State implements MouseListener {
     }
 
     public void draw(Graphics2D g2d) {
-        for (GameEntity entity : tiles) {
-            entity.draw(g2d);
+        //draw UI component
+
+
+        //draw tiles map
+        for (ArrayList<AbstractTile> tile : tiles) {
+            for (AbstractTile t : tile) {
+                t.draw(g2d);
+            }
         }
+
+        //draw enemies
         for (GameEntity entity : enemies) {
             entity.draw(g2d);
         }
+
+        //draw towers
         for (AbstractTower tower : towers) {
             tower.draw(g2d);
         }
+
+        //draw bullets
         for (List<AbstractBullet> bullet : bullets) {
             for (AbstractBullet b : bullet) {
                 b.draw(g2d);
@@ -78,18 +89,16 @@ public class GameState extends State implements MouseListener {
         }
     }
 
-    public void addTower(AbstractTower tower) {
-        towers.add(tower);
-        bullets.add(new ArrayList<>());
-    }
-
     @Override
     public void run() {
         long cur = System.nanoTime();
-//        System.out.println(cur - start);
+
+        //spawn enemies
         if ((cur - start) % 1000 == 0 && enemies.size() <= 100) {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
+
+        //check enemies die
         for (int i = enemies.size() - 1; i >= 0; i--) {
             for (ArrayList<AbstractBullet> bullet : bullets) {
                 for (int i1 = bullet.size() - 1; i1 >= 0; i1--) {
@@ -102,6 +111,8 @@ public class GameState extends State implements MouseListener {
                 enemies.remove(enemies.get(i));
             }
         }
+
+        //delete bullets when hit enemies
         for (List<AbstractBullet> bullet : bullets) {
             for (int i = bullet.size() - 1; i >= 0; i--) {
                 if (bullet.get(i).destroy()) {
@@ -109,6 +120,8 @@ public class GameState extends State implements MouseListener {
                 }
             }
         }
+
+        // enemies AI
         for (AbstractEnemy enemy : enemies) {
             int nextX = wayPoints.get(enemy.getNextWayPoint()).x * GameConfig.TILE_SIZE;
             int nextY = wayPoints.get(enemy.getNextWayPoint()).y * GameConfig.TILE_SIZE;
@@ -123,16 +136,27 @@ public class GameState extends State implements MouseListener {
             } else enemy.setNextWayPoint(enemy.getNextWayPoint() + 1);
             enemy.move();
         }
+
+        //check enemies invasion
         for (int i = 0; i < towers.size(); i++) {
             if (towers.get(i).checkInvasion((ArrayList<AbstractEnemy>) enemies)) {
                 towers.get(i).attack(bullets.get(i), towers.get(i).getAttackSpeed());
             }
         }
+        // move bullets
         for (List<AbstractBullet> bullet : bullets) {
             for (AbstractBullet b : bullet) {
                 b.move();
             }
         }
+    }
+
+    public void addTower(AbstractTower tower) {
+        if (tiles.get((int) tower.getY() / GameConfig.TILE_SIZE).get((int) tower.getX() / GameConfig.TILE_SIZE) instanceof Road) {
+            return;
+        }
+        towers.add(tower);
+        bullets.add(new ArrayList<>());
     }
 
     @Override
@@ -157,7 +181,8 @@ public class GameState extends State implements MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         if (mouseFlag == 1) {
-            this.addTower(new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+            NormalTower normalTower = new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE);
+            addTower(normalTower);
         }
         mouseFlag = 0;
         if(isPauseButton == true) {

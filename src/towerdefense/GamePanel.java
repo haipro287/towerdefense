@@ -1,23 +1,19 @@
 package towerdefense;
 
-import towerdefense.listener.GameListener;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
-import java.util.Stack;
 
 public class GamePanel extends JPanel implements Runnable {
 
     private MenuState menuState;
     private GameState gameState;
-    private GameListener gameListener;
     private GameController gameController;
 
     public GamePanel() throws FileNotFoundException {
-        setBackground(Color.BLACK);
+        setBackground(Color.GRAY);
         gameController = new GameController();
         addMouseListener(mouseListener);
 //        addKeyListener(gameListener.getKeyListener());
@@ -37,12 +33,10 @@ public class GamePanel extends JPanel implements Runnable {
             tick();
             repaint();
             elapsed = System.nanoTime() - start;
-//            System.out.println(elapsed);
             wait = (GameConfig.GAME_NSPF - elapsed)/1000000;
             if (wait <= 0) {
                 wait = GameConfig.GAME_NSPF / 1000000;
             }
-//            System.out.println(wait);
             try {
                 Thread.sleep(wait);
             } catch (InterruptedException e) {
