@@ -1,5 +1,6 @@
 package towerdefense;
 
+import towerdefense.entity.Explosion;
 import towerdefense.entity.GameEntity;
 import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.enemy.AbstractEnemy;
@@ -21,11 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameState extends State implements MouseListener {
-    private List<ArrayList<AbstractTile>> tiles;
-    private List<AbstractTower> towers = new ArrayList<>();
-    private List<AbstractEnemy> enemies = new ArrayList<>();
-    private List<ArrayList<AbstractBullet>> bullets = new ArrayList<>();
-    private List<Point> wayPoints = new ArrayList<>();
+    private ArrayList<ArrayList<AbstractTile>> tiles;
+    private ArrayList<AbstractTower> towers = new ArrayList<>();
+    private ArrayList<AbstractEnemy> enemies = new ArrayList<>();
+    private ArrayList<ArrayList<AbstractBullet>> bullets = new ArrayList<>();
+    private ArrayList<Explosion> explosions = new ArrayList<>();
+    private ArrayList<Point> wayPoints;
 
     private int mouseFlag;
     private int invadedEnemy;
@@ -55,6 +57,11 @@ public class GameState extends State implements MouseListener {
         g2d.drawString(Integer.toString(GameConfig.MACHINE_GUN_TOWER_COST), 1050, 275);
         g2d.drawImage(SniperTower.image, 1000, 300, 32, 32, null);
         g2d.drawString(Integer.toString(GameConfig.SNIPER_TOWER_COST), 1050, 325);
+        g2d.drawImage(UILoader.pauseButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
+        if (UILoader.isPauseButton) {
+            g2d.drawImage(UILoader.pauseButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
+        }
+
         //draw tiles map
         for (ArrayList<AbstractTile> tile : tiles) {
             for (AbstractTile t : tile) {
@@ -78,10 +85,12 @@ public class GameState extends State implements MouseListener {
                 b.draw(g2d);
             }
         }
-        g2d.drawImage(pauseButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
-        if (isPauseButton == true) {
-            g2d.drawImage(pauseButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
+
+        //draw explosion
+        for (Explosion explosion : explosions) {
+            explosion.draw(g2d);
         }
+
     }
 
     @Override
@@ -93,18 +102,19 @@ public class GameState extends State implements MouseListener {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
 
-        //check enemies die
+        //check if enemies is defeated or destroyed
         for (int i = enemies.size() - 1; i >= 0; i--) {
             for (ArrayList<AbstractBullet> bullet : bullets) {
                 for (int i1 = bullet.size() - 1; i1 >= 0; i1--) {
                     if (enemies.get(i).injure(bullet.get(i1))) {
-                        bullet.remove(bullet.get(i1));
+                        bullet.remove(i1);
                     }
                 }
             }
             if (enemies.get(i).destroy() || enemies.get(i).defeat()) {
                 if (enemies.get(i).defeat()) {
                     money += enemies.get(i).getReward();
+                    enemies.get(i).explode(explosions);
                 }
                 if (enemies.get(i).destroy()) {
                     invadedEnemy++;
@@ -113,12 +123,19 @@ public class GameState extends State implements MouseListener {
             }
         }
 
-        //delete bullets when hit enemies
+        //delete bullets when fly out the map
         for (List<AbstractBullet> bullet : bullets) {
             for (int i = bullet.size() - 1; i >= 0; i--) {
                 if (bullet.get(i).destroy()) {
-                    bullet.remove(bullet.get(i));
+                    bullet.remove(i);
                 }
+            }
+        }
+
+        //delete explosion when animation has done
+        for (int i = explosions.size() - 1; i >= 0; i--) {
+            if (explosions.get(i).destroy()) {
+                explosions.remove(i);
             }
         }
 
@@ -150,6 +167,8 @@ public class GameState extends State implements MouseListener {
                 b.move();
             }
         }
+
+        //
         if (invadedEnemy > 5) {
             super.gameOver = true;
         }
@@ -192,7 +211,7 @@ public class GameState extends State implements MouseListener {
         }
         if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
             if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
-                isPauseButton = true;
+                UILoader.isPauseButton = true;
             }
         }
     }
@@ -223,14 +242,14 @@ public class GameState extends State implements MouseListener {
             }
         }
         mouseFlag = 0;
-        if(isPauseButton == true) {
+        if (UILoader.isPauseButton == true) {
             if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
                 if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                     //gameController.states.pop();
                     gameController.states.push(new PauseState(gameController));
                 }
             }
-            isPauseButton = false;
+            UILoader.isPauseButton = false;
         }
     }
 

@@ -6,6 +6,7 @@ import towerdefense.entity.bullet.AbstractBullet;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 
 public abstract class AbstractEnemy extends AbstractEntity implements Movable, Vulnerable, Destroyable {
     private int hp;
@@ -121,5 +122,9 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
             return true;
         }
         return false;
+    }
+
+    public void explode(ArrayList<Explosion> explosions) {
+        explosions.add(new Explosion(0, getX(), getY(), getWidth(), getHeight()));
     }
 }

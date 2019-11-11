@@ -45,9 +45,9 @@ public class GameStage {
         return tiles;
     }
 
-    public static List<Point> loadWayPoints(String filename) throws FileNotFoundException {
+    public static ArrayList<Point> loadWayPoints(String filename) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(filename));
-        List<Point> wayPoints = new ArrayList<>();
+        ArrayList<Point> wayPoints = new ArrayList<>();
         for (int i = 0; i < 21; i++) {
             sc.nextLine();
         }

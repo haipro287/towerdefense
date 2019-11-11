@@ -30,9 +30,9 @@ public class GamePanel extends JPanel implements Runnable {
             tick();
             repaint();
             elapsed = System.nanoTime() - start;
-            wait = (GameConfig.GAME_NSPF - elapsed)/1000000;
+            wait = (GameConfig.GAME_NSPT - elapsed) / 1000000;
             if (wait <= 0) {
-                wait = GameConfig.GAME_NSPF / 1000000;
+                wait = GameConfig.GAME_NSPT / 1000000;
             }
             try {
                 Thread.sleep(wait);

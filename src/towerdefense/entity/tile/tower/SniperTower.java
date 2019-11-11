@@ -39,14 +39,15 @@ public class SniperTower extends AbstractTower {
         t = T;
         AbstractBullet bullet = new SniperBullet(this, 0, getCenter().x, getCenter().y, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, getAngle());
         if (getxDistance() <= 0 && getyDistance() <= 0) {
-            bullet.setFlag(1);
+            setFlag(1);
         } else if (getxDistance() <= 0 && getyDistance() >= 0) {
-            bullet.setFlag(2);
+            setFlag(2);
         } else if (getxDistance() >= 0 && getyDistance() <= 0) {
-            bullet.setFlag(3);
+            setFlag(3);
         } else if (getxDistance() >= 0 && getyDistance() >= 0) {
-            bullet.setFlag(4);
+            setFlag(4);
         }
+        bullet.setFlag(getFlag());
         bullets.add(bullet);
     }
 }
