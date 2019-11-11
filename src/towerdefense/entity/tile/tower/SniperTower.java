@@ -7,11 +7,12 @@ import towerdefense.entity.bullet.SniperBullet;
 import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 public class SniperTower extends AbstractTower {
 
-    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile206.png");
+    public static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile206.png");
 
     public SniperTower(long createdTick, int x, int y, int width, int height) {
         super(createdTick, x, y, width, height);
@@ -21,8 +22,10 @@ public class SniperTower extends AbstractTower {
 
     @Override
     public void draw(Graphics2D g2d) {
-        g2d.setPaint(Color.RED);
+        AffineTransform backup = g2d.getTransform();
         super.draw(g2d);
+        g2d.drawImage(image, (int) getX(), (int) getY(), getWidth(), getHeight(), null);
+        g2d.setTransform(backup);
     }
 
     private long t;

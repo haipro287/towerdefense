@@ -9,6 +9,8 @@ import towerdefense.entity.tile.road.Road;
 import towerdefense.entity.tile.tower.AbstractTower;
 import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
+import towerdefense.entity.tile.tower.SniperTower;
+import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -19,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameState extends State implements MouseListener {
-    private GameStage gameStage;
     private List<ArrayList<AbstractTile>> tiles;
     private List<AbstractTower> towers = new ArrayList<>();
     private List<AbstractEnemy> enemies = new ArrayList<>();
@@ -28,6 +29,7 @@ public class GameState extends State implements MouseListener {
 
     private int mouseFlag;
     private int invadedEnemy;
+    private int money;
 
     private long start;
 
@@ -35,28 +37,22 @@ public class GameState extends State implements MouseListener {
         start = System.nanoTime();
         mouseFlag = 0;
         invadedEnemy = 0;
+        money = 100;
+        super.gameOver = false;
         tiles = GameStage.loadMap("src/resources/map1.txt");
         wayPoints = GameStage.loadWayPoints("src/resources/map1.txt");
-        towers.add(new NormalTower(0, 17 * GameConfig.TILE_SIZE, 18 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
-        bullets.add(new ArrayList<>());
-//        towers.add(new SniperTower(0, 5 * GameConfig.TILE_SIZE, 5 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
-//        bullets.add(new ArrayList<>());
-        towers.add(new MachineGunTower(0, 12 * GameConfig.TILE_SIZE, 5 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE, 1 * GameConfig.TILE_SIZE));
-        bullets.add(new ArrayList<>());
-    }
-
-    public GameStage getGameStage() {
-        return gameStage;
-    }
-
-    public void setGameStage(GameStage gameStage) {
-        this.gameStage = gameStage;
     }
 
     public void draw(Graphics2D g2d) {
         //draw UI component
-
-
+        g2d.drawString(Integer.toString(invadedEnemy) + "/5", 1000, 50);
+        g2d.drawString(Integer.toString(money), 1000, 100);
+        g2d.drawImage(NormalTower.image, 1000, 200, 32, 32, null);
+        g2d.drawString(Integer.toString(GameConfig.NORMAL_TOWER_COST), 1050, 225);
+        g2d.drawImage(MachineGunTower.image, 1000, 250, 32, 32, null);
+        g2d.drawString(Integer.toString(GameConfig.MACHINE_GUN_TOWER_COST), 1050, 275);
+        g2d.drawImage(SniperTower.image, 1000, 300, 32, 32, null);
+        g2d.drawString(Integer.toString(GameConfig.SNIPER_TOWER_COST), 1050, 325);
         //draw tiles map
         for (ArrayList<AbstractTile> tile : tiles) {
             for (AbstractTile t : tile) {
@@ -85,9 +81,9 @@ public class GameState extends State implements MouseListener {
     @Override
     public void run() {
         long cur = System.nanoTime();
-
+        //check game over
         //spawn enemies
-        if ((cur - start) % 1000 == 0 && enemies.size() <= 100) {
+        if ((cur - start) % 5000 == 0 && enemies.size() <= 100) {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
 
@@ -101,6 +97,12 @@ public class GameState extends State implements MouseListener {
                 }
             }
             if (enemies.get(i).destroy() || enemies.get(i).defeat()) {
+                if (enemies.get(i).defeat()) {
+                    money += enemies.get(i).getReward();
+                }
+                if (enemies.get(i).destroy()) {
+                    invadedEnemy++;
+                }
                 enemies.remove(enemies.get(i));
             }
         }
@@ -142,14 +144,18 @@ public class GameState extends State implements MouseListener {
                 b.move();
             }
         }
+        if (invadedEnemy > 5) {
+            super.gameOver = true;
+        }
     }
 
-    public void addTower(AbstractTower tower) {
+    public boolean addTower(AbstractTower tower) {
         if (tiles.get((int) tower.getY() / GameConfig.TILE_SIZE).get((int) tower.getX() / GameConfig.TILE_SIZE) instanceof Road) {
-            return;
+            return false;
         }
         towers.add(tower);
         bullets.add(new ArrayList<>());
+        return true;
     }
 
     @Override
@@ -160,17 +166,50 @@ public class GameState extends State implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (e.getX() >= GameConfig.TILE_SIZE * 17 && e.getX() <= GameConfig.TILE_SIZE * 18
-                && e.getY() >= GameConfig.TILE_SIZE * 18 && e.getY() <= GameConfig.TILE_SIZE * 19) {
-            mouseFlag = 1;
+        if (e.getX() >= 1000 && e.getX() <= 1000 + GameConfig.TILE_SIZE
+                && e.getY() >= 200 && e.getY() <= 200 + GameConfig.TILE_SIZE) {
+            if (money - GameConfig.NORMAL_TOWER_COST >= 0) {
+                mouseFlag = 1;
+            }
+        }
+        if (e.getX() >= 1000 && e.getX() <= 1000 + GameConfig.TILE_SIZE
+                && e.getY() >= 250 && e.getY() <= 250 + GameConfig.TILE_SIZE) {
+            if (money - GameConfig.MACHINE_GUN_TOWER_COST >= 0) {
+                mouseFlag = 2;
+            }
+        }
+        if (e.getX() >= 1000 && e.getX() <= 1000 + GameConfig.TILE_SIZE
+                && e.getY() >= 300 && e.getY() <= 300 + GameConfig.TILE_SIZE) {
+            if (money - GameConfig.SNIPER_TOWER_COST >= 0) {
+                mouseFlag = 3;
+            }
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (mouseFlag == 1) {
-            NormalTower normalTower = new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE);
-            addTower(normalTower);
+        switch (mouseFlag) {
+            case 1: {
+                NormalTower normalTower = new NormalTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE);
+                if (addTower(normalTower)) {
+                    money -= GameConfig.NORMAL_TOWER_COST;
+                }
+                break;
+            }
+            case 2: {
+                MachineGunTower machineGunTower = new MachineGunTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE);
+                if (addTower(machineGunTower)) {
+                    money -= GameConfig.MACHINE_GUN_TOWER_COST;
+                }
+                break;
+            }
+            case 3: {
+                SniperTower sniperTower = new SniperTower(0, e.getX() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, e.getY() / GameConfig.TILE_SIZE * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE);
+                if (addTower(sniperTower)) {
+                    money -= GameConfig.SNIPER_TOWER_COST;
+                }
+                break;
+            }
         }
         mouseFlag = 0;
     }

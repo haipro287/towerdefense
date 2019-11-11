@@ -7,9 +7,6 @@ import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 
 public class GamePanel extends JPanel implements Runnable {
-
-    private MenuState menuState;
-    private GameState gameState;
     private GameController gameController;
 
     public GamePanel() throws FileNotFoundException {
@@ -46,7 +43,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     protected void tick() {
-        gameController.states.peek().run();
+        gameController.run();
     }
 
     @Override
@@ -71,7 +68,6 @@ public class GamePanel extends JPanel implements Runnable {
         @Override
         public void mouseReleased(MouseEvent e) {
             gameController.states.peek().mouseReleased(e);
-
         }
 
         @Override

@@ -15,7 +15,10 @@ public class GameController {
     }
 
     public void run() {
-        this.states.peek().run();
+        if (!this.states.peek().gameOver)
+            this.states.peek().run();
+        else
+            this.states.pop();
     }
 
     public void draw(Graphics2D g2d) {

@@ -9,10 +9,12 @@ import java.awt.event.MouseListener;
 
 public abstract class State implements MouseListener {
 
+    public boolean gameOver;
     protected GameController gameController;
 
     public State(GameController gameController) {
         this.gameController = gameController;
+        gameOver = false;
     }
 
     protected State() {

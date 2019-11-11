@@ -7,6 +7,7 @@ import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.NormalBullet;
 import towerdefense.entity.enemy.AbstractEnemy;
 import towerdefense.entity.tile.AbstractTile;
+import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -15,6 +16,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 public abstract class AbstractTower extends AbstractTile implements Attackable {
+    private int cost;
     private int radius;
     private int attackSpeed;
     private double angle;
@@ -22,6 +24,8 @@ public abstract class AbstractTower extends AbstractTile implements Attackable {
 
     private double xDistance;
     private double yDistance;
+
+    private static Image image = ImageLoader.getImage("src/resources/Retina/tankBody_huge_outline.png");
 
     public AbstractTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
@@ -79,6 +83,14 @@ public abstract class AbstractTower extends AbstractTile implements Attackable {
         this.flag = flag;
     }
 
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
     public boolean checkInvasion(ArrayList<AbstractEnemy> enemies) {
         int count = 0;
         for (int i = 0; i < enemies.size(); i++) {
@@ -96,6 +108,7 @@ public abstract class AbstractTower extends AbstractTile implements Attackable {
     public void draw(Graphics2D g2d) {
         g2d.setPaint(Color.RED);
         g2d.drawOval((int) getX() - getRadius() / 2 + getWidth() / 2, (int) getY() - getRadius() / 2 + getHeight() / 2, getRadius(), getRadius());
+        g2d.drawImage(image, (int) getX(), (int) getY(), getWidth(), getHeight(), null);
         AffineTransform affineTransform = new AffineTransform();
         switch (getFlag()) {
             case 1: {

@@ -13,6 +13,7 @@ public class NormalEnemy extends AbstractEnemy {
         super.setHp(GameConfig.NORMAL_ENEMY_HP);
         super.setSpeed(GameConfig.NORMAL_ENEMY_SPEED);
         super.setArmor(GameConfig.NORMAL_ENEMY_ARMOR);
+        super.setReward(GameConfig.NORMAL_ENEMY_REWARD);
     }
 
     @Override

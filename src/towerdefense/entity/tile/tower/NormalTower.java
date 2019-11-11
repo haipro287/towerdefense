@@ -11,12 +11,13 @@ import java.util.ArrayList;
 
 public class NormalTower extends AbstractTower {
 
-    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile249.png");
+    public static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile249.png");
 
     public NormalTower(long createdTick, double x, double y, int width, int height) {
         super(createdTick, x, y, width, height);
         super.setRadius(GameConfig.NORMAL_TOWER_RADIUS);
         super.setAttackSpeed(GameConfig.NORMAL_TOWER_ATTACK_SPEED);
+        super.setCost(GameConfig.NORMAL_TOWER_COST);
     }
 
     @Override

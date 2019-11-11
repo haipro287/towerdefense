@@ -11,7 +11,7 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
     private int hp;
     private double speed;
     private int armor;
-    private String Item;
+    private int reward;
     private int flag;
     private int nextWayPoint;
 
@@ -47,12 +47,12 @@ public abstract class AbstractEnemy extends AbstractEntity implements Movable, V
         this.armor = armor;
     }
 
-    public String getItem() {
-        return Item;
+    public int getReward() {
+        return reward;
     }
 
-    public void setItem(String item) {
-        Item = item;
+    public void setReward(int reward) {
+        this.reward = reward;
     }
 
     public int getFlag() {

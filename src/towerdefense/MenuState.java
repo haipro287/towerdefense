@@ -69,7 +69,6 @@ public class MenuState extends State implements MouseListener {
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
-
                 }
             }
             isPlayButton = false;

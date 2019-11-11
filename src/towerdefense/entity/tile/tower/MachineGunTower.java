@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MachineGunTower extends AbstractTower {
 
-    private static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile250.png");
+    public static Image image = ImageLoader.getImage("src/resources/Retina/towerDefense_tile250.png");
 
     public MachineGunTower(long createdTick, int x, int y, int width, int height) {
         super(createdTick, x, y, width, height);

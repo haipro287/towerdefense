@@ -7,5 +7,4 @@ public class Main {
         GameFrame gameframe = new GameFrame();
         gameframe.setVisible(true);
     }
-
 }
