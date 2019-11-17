@@ -1,14 +1,15 @@
-package towerdefense;
+package towerdefense.state;
+
+import towerdefense.GameController;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileNotFoundException;
 
 import static towerdefense.GameConfig.SCREEN_HEIGHT;
 import static towerdefense.GameConfig.SCREEN_WIDTH;
-import static towerdefense.UILoader.*;
-import static towerdefense.UILoader.isQuitButton;
+import static towerdefense.resourcesloader.UILoader.*;
+import static towerdefense.resourcesloader.UILoader.isQuitButton;
 
 public class PauseState extends State implements MouseListener {
 

@@ -1,5 +1,8 @@
-package towerdefense;
+package towerdefense.state;
 
+import towerdefense.GameConfig;
+import towerdefense.GameController;
+import towerdefense.GameStage;
 import towerdefense.entity.Explosion;
 import towerdefense.entity.GameEntity;
 import towerdefense.entity.bullet.AbstractBullet;
@@ -11,40 +14,126 @@ import towerdefense.entity.tile.tower.AbstractTower;
 import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
 import towerdefense.entity.tile.tower.SniperTower;
-import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.resourcesloader.UILoader;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.geom.Rectangle2D;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameState extends State implements MouseListener {
-    private ArrayList<ArrayList<AbstractTile>> tiles;
+    private ArrayList<ArrayList<AbstractTile>> tiles = new ArrayList<>();
     private ArrayList<AbstractTower> towers = new ArrayList<>();
     private ArrayList<AbstractEnemy> enemies = new ArrayList<>();
     private ArrayList<ArrayList<AbstractBullet>> bullets = new ArrayList<>();
     private ArrayList<Explosion> explosions = new ArrayList<>();
-    private ArrayList<Point> wayPoints;
+    private ArrayList<Point> wayPoints = new ArrayList<>();
 
     private int mouseFlag;
     private int invadedEnemy;
     private int money;
 
     private long start;
+    private long tick;
 
-    public GameState(GameController gameController) throws FileNotFoundException {
-        //gameListener = new GameListener(this);
+    public GameState(GameController gameController, String filepath) {
         super(gameController);
         start = System.nanoTime();
+        tick = 0;
         mouseFlag = 0;
         invadedEnemy = 0;
         money = 100;
         super.gameOver = false;
-        tiles = GameStage.loadMap("src/resources/map1.txt");
-        wayPoints = GameStage.loadWayPoints("src/resources/map1.txt");
+        GameStage.load(this, filepath);
+    }
+
+    public ArrayList<ArrayList<AbstractTile>> getTiles() {
+        return tiles;
+    }
+
+    public void setTiles(ArrayList<ArrayList<AbstractTile>> tiles) {
+        this.tiles = tiles;
+    }
+
+    public ArrayList<AbstractTower> getTowers() {
+        return towers;
+    }
+
+    public void setTowers(ArrayList<AbstractTower> towers) {
+        this.towers = towers;
+    }
+
+    public ArrayList<AbstractEnemy> getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(ArrayList<AbstractEnemy> enemies) {
+        this.enemies = enemies;
+    }
+
+    public ArrayList<ArrayList<AbstractBullet>> getBullets() {
+        return bullets;
+    }
+
+    public void setBullets(ArrayList<ArrayList<AbstractBullet>> bullets) {
+        this.bullets = bullets;
+    }
+
+    public ArrayList<Explosion> getExplosions() {
+        return explosions;
+    }
+
+    public void setExplosions(ArrayList<Explosion> explosions) {
+        this.explosions = explosions;
+    }
+
+    public ArrayList<Point> getWayPoints() {
+        return wayPoints;
+    }
+
+    public void setWayPoints(ArrayList<Point> wayPoints) {
+        this.wayPoints = wayPoints;
+    }
+
+    public int getMouseFlag() {
+        return mouseFlag;
+    }
+
+    public void setMouseFlag(int mouseFlag) {
+        this.mouseFlag = mouseFlag;
+    }
+
+    public int getInvadedEnemy() {
+        return invadedEnemy;
+    }
+
+    public void setInvadedEnemy(int invadedEnemy) {
+        this.invadedEnemy = invadedEnemy;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public long getStart() {
+        return start;
+    }
+
+    public void setStart(long start) {
+        this.start = start;
+    }
+
+    public long getTick() {
+        return tick;
+    }
+
+    public void setTick(long tick) {
+        this.tick = tick;
     }
 
     public void draw(Graphics2D g2d) {
@@ -95,10 +184,10 @@ public class GameState extends State implements MouseListener {
 
     @Override
     public void run() {
+        tick++;
         long cur = System.nanoTime();
-        //check game over
         //spawn enemies
-        if ((cur - start) % 5000 == 0 && enemies.size() <= 100) {
+        if (tick % 200 == 0 && enemies.size() <= 100) {
             enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
         }
 
@@ -157,7 +246,7 @@ public class GameState extends State implements MouseListener {
 
         //check enemies invasion
         for (int i = 0; i < towers.size(); i++) {
-            if (towers.get(i).checkInvasion((ArrayList<AbstractEnemy>) enemies)) {
+            if (towers.get(i).checkInvasion(enemies)) {
                 towers.get(i).attack(bullets.get(i), towers.get(i).getAttackSpeed());
             }
         }
@@ -168,7 +257,7 @@ public class GameState extends State implements MouseListener {
             }
         }
 
-        //
+        //check game over condition
         if (invadedEnemy > 5) {
             super.gameOver = true;
         }
@@ -247,6 +336,7 @@ public class GameState extends State implements MouseListener {
                 if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                     //gameController.states.pop();
                     gameController.states.push(new PauseState(gameController));
+                    GameStage.save(this, "src/resources/save.json");
                 }
             }
             UILoader.isPauseButton = false;

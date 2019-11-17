@@ -1,4 +1,4 @@
-package towerdefense;
+package towerdefense.resourcesloader;
 
 import towerdefense.resourcesloader.ImageLoader;
 

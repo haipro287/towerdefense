@@ -1,20 +1,17 @@
-package towerdefense;
+package towerdefense.state;
 
-import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.GameController;
 
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileNotFoundException;
 
 import static towerdefense.GameConfig.SCREEN_HEIGHT;
 import static towerdefense.GameConfig.SCREEN_WIDTH;
-import static towerdefense.UILoader.*;
+import static towerdefense.resourcesloader.UILoader.*;
 
 public class MenuState extends State implements MouseListener {
 
-    //private GameController gameController;
     public MenuState(GameController gameController) {
         super(gameController);
     }
@@ -56,11 +53,7 @@ public class MenuState extends State implements MouseListener {
         if (isPlayButton == true) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
                 if (e.getY() >= 195 && e.getY() <= 195 + 115) {
-                    try {
-                        gameController.states.push(new GameState(gameController));
-                    } catch (FileNotFoundException ex) {
-                        ex.printStackTrace();
-                    }
+                    gameController.states.push(new GameState(gameController, "src/resources/map.json"));
                 }
             }
             isPlayButton = false;

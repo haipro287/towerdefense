@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="update explode animation when enemies die">
-      <change afterPath="$PROJECT_DIR$/src/towerdefense/entity/Explosion.java" afterDir="false" />
+    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="update game save/load function,">
+      <change afterPath="$PROJECT_DIR$/src/resources/map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/AbstractEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/tile/tower/SniperTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/tile/tower/SniperTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/UILoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/resourcesloader/UILoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +55,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/towerdefense" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Procon/UET_Procon_2019/Procon" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,18 +70,19 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UET\Course\2019-2020\oop\towerdefense\src\resources\" />
+      <recent name="D:\UET\Course\oop\towerdefense\src\resources\Sprites" />
+      <recent name="D:\UET\Course\oop\towerdefense\src\haipro\towerdefense" />
+      <recent name="D:\UET\Course\oop\towerdefense\src" />
+      <recent name="D:\UET\Course\oop\towerdefense\src\main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\UET\Course\oop\towerdefense\src\resources\Sprites\run" />
       <recent name="D:\UET\Course\oop\towerdefense\src\resources" />
       <recent name="D:\UET\Course\oop\towerdefense\src\resources\Sprites" />
       <recent name="D:\UET\Course\oop\towerdefense\src\main\resources" />
       <recent name="D:\UET\Course\oop\towerdefense\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\UET\Course\oop\towerdefense\src\resources\Sprites" />
-      <recent name="D:\UET\Course\oop\towerdefense\src\haipro\towerdefense" />
-      <recent name="D:\UET\Course\oop\towerdefense\src" />
-      <recent name="D:\UET\Course\oop\towerdefense\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573373928263</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update explode animation when enemies die">
+      <created>1573484410141</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573484410141</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,7 +218,8 @@
     <MESSAGE value="add enemy image" />
     <MESSAGE value="change project structure &#10;- game panel, game state,...&#10;- enemeis can follow the path" />
     <MESSAGE value="no more tower in the road" />
-    <option name="LAST_COMMIT_MESSAGE" value="no more tower in the road" />
+    <MESSAGE value="update explode animation when enemies die" />
+    <option name="LAST_COMMIT_MESSAGE" value="update explode animation when enemies die" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

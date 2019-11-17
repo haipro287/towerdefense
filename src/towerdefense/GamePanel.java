@@ -4,16 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileNotFoundException;
 
 public class GamePanel extends JPanel implements Runnable {
     private GameController gameController;
 
-    public GamePanel() throws FileNotFoundException {
+    public GamePanel() {
         setBackground(Color.GRAY);
         gameController = new GameController();
         addMouseListener(mouseListener);
-//        addKeyListener(gameListener.getKeyListener());
         start();
     }
 

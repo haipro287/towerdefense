@@ -1,5 +1,6 @@
-package towerdefense;
+package towerdefense.state;
 
+import towerdefense.GameController;
 import towerdefense.entity.tile.tower.NormalTower;
 
 import java.awt.*;
