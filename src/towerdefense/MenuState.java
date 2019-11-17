@@ -3,18 +3,12 @@ package towerdefense;
 import towerdefense.resourcesloader.ImageLoader;
 
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 
-import static towerdefense.GameConfig.SCREEN_HEIGHT;
-import static towerdefense.GameConfig.SCREEN_WIDTH;
-import static towerdefense.UILoader.*;
-
 public class MenuState extends State implements MouseListener {
 
-    //private GameController gameController;
     public MenuState(GameController gameController) {
         super(gameController);
     }
@@ -24,15 +18,15 @@ public class MenuState extends State implements MouseListener {
     }
 
     public void draw(Graphics2D g2d) {
-        g2d.drawImage(imageOfMenu, 0, 0, SCREEN_WIDTH + 200, SCREEN_HEIGHT + 39, null);
-        g2d.drawImage(mainMenu, SCREEN_WIDTH / 3 + 10, 100, 500, 368, null);
-        g2d.drawImage(playButton, 445, 195, 270, 115, null);
-        if (isPlayButton) {
-            g2d.drawImage(playButtonClick, 445, 195, 270, 115, null);
+        g2d.drawImage(UILoader.imageOfMenu, 0, 0, GameConfig.SCREEN_WIDTH + 200, GameConfig.SCREEN_HEIGHT + 39, null);
+        g2d.drawImage(UILoader.mainMenu, GameConfig.SCREEN_WIDTH / 3 + 10, 100, 500, 368, null);
+        g2d.drawImage(UILoader.playButton, 445, 195, 270, 115, null);
+        if (UILoader.isPlayButton) {
+            g2d.drawImage(UILoader.playButtonClick, 445, 195, 270, 115, null);
         }
-        g2d.drawImage(quitButton, 445, 330, 270, 115, null);
-        if (isQuitButton) {
-            g2d.drawImage(quitButtonClick, 445, 330, 270, 115, null);
+        g2d.drawImage(UILoader.quitButton, 445, 330, 270, 115, null);
+        if (UILoader.isQuitButton) {
+            g2d.drawImage(UILoader.quitButtonClick, 445, 330, 270, 115, null);
         }
     }
 
@@ -45,15 +39,15 @@ public class MenuState extends State implements MouseListener {
     public void mousePressed(MouseEvent e) {
         if (e.getX() >= 445 && e.getX() <= 445 + 270) {
             if (e.getY() >= 195 && e.getY() <= 195 + 115) {
-                isPlayButton = true;
+                UILoader.isPlayButton = true;
             } else if (e.getY() >= 330 && e.getY() <= 330 + 115) {
-                isQuitButton = true;
+                UILoader.isQuitButton = true;
             }
         }
     }
 
     public void mouseReleased(MouseEvent e) {
-        if (isPlayButton == true) {
+        if (UILoader.isPlayButton == true) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
                 if (e.getY() >= 195 && e.getY() <= 195 + 115) {
                     try {
@@ -63,14 +57,14 @@ public class MenuState extends State implements MouseListener {
                     }
                 }
             }
-            isPlayButton = false;
-        } else if (isQuitButton == true) {
+            UILoader.isPlayButton = false;
+        } else if (UILoader.isQuitButton == true) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
                 if (e.getY() >= 330 && e.getY() <= 330 + 115) {
                     System.exit(0);
                 }
             }
-            isQuitButton = false;
+            UILoader.isQuitButton = false;
         }
     }
 

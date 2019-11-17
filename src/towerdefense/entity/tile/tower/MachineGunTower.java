@@ -5,6 +5,7 @@ import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.MachineBullet;
 import towerdefense.entity.bullet.NormalBullet;
 import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.resourcesloader.SoundLoader;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -49,5 +50,6 @@ public class MachineGunTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
+        SoundLoader.play("machine.wav");
     }
 }

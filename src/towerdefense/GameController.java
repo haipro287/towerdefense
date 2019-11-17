@@ -1,5 +1,7 @@
 package towerdefense;
 
+import towerdefense.resourcesloader.SoundLoader;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,10 +17,7 @@ public class GameController {
     }
 
     public void run() {
-        if (!this.states.peek().gameOver)
-            this.states.peek().run();
-        else
-            this.states.pop();
+        this.states.peek().run();
     }
 
     public void draw(Graphics2D g2d) {
