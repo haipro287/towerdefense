@@ -50,6 +50,6 @@ public class NormalTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
-        SoundLoader.play("normal.wav");
+        SoundLoader.play(SoundLoader.normalTowerSFX);
     }
 }

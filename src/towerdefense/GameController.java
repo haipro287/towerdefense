@@ -13,6 +13,7 @@ public class GameController {
     public GameController() {
         this.states = new Stack<>();
         this.states.push(new MenuState(this));
+        SoundLoader.play(SoundLoader.inGameSFX);
     }
 
     public void run() {

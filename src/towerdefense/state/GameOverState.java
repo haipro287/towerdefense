@@ -26,7 +26,7 @@ public class GameOverState extends State implements MouseListener {
         g2d.drawImage(UILoader.gameOver, GameConfig.SCREEN_WIDTH / 3 + 10, 50, 500, 500, null);
         g2d.drawImage(UILoader.restartButton, 445, 140, 270, 115, null);
         g2d.drawImage(UILoader.menuButton, 445, 275, 270, 115, null);
-        g2d.drawImage(UILoader.quitOfPause, 445, 415, 270, 115, null);
+        g2d.drawImage(UILoader.quitButton, 445, 410, 270, 115, null);
         if (UILoader.isRestartButton) {
             g2d.drawImage(UILoader.restartButtonClick, 445, 140, 270, 115, null);
         }
@@ -34,7 +34,7 @@ public class GameOverState extends State implements MouseListener {
             g2d.drawImage(UILoader.menuButtonClick, 445, 275, 270, 115, null);
         }
         if (UILoader.isQuitButton) {
-            g2d.drawImage(UILoader.quitOfPauseClick, 445, 415, 270, 115, null);
+            g2d.drawImage(UILoader.quitButtonClick, 445, 410, 270, 115, null);
         }
     }
 
@@ -47,11 +47,11 @@ public class GameOverState extends State implements MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         if (e.getX() >= 445 && e.getX() <= 445 + 270) {
-            if (e.getY() >= 190 && e.getY() <= 190 + 115) {
+            if (e.getY() >= 140 && e.getY() <= 140 + 115) {
                 UILoader.isRestartButton = true;
-            } else if (e.getY() >= 325 && e.getY() <= 325 + 115) {
+            } else if (e.getY() >= 275 && e.getY() <= 275 + 115) {
                 UILoader.isMenuButton = true;
-            } else if (e.getY() >= 465 && e.getY() <= 465 + 115) {
+            } else if (e.getY() >= 410 && e.getY() <= 410 + 115) {
                 UILoader.isQuitButton = true;
             }
         }
@@ -61,7 +61,7 @@ public class GameOverState extends State implements MouseListener {
     public void mouseReleased(MouseEvent e) {
         if (UILoader.isRestartButton) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
-                if (e.getY() >= 190 && e.getY() <= 140 + 115) {
+                if (e.getY() >= 140 && e.getY() <= 140 + 115) {
                     gameController.states.pop();
                     gameController.states.push(new GameState(gameController, "src/resources/map.json"));
                 }
@@ -69,15 +69,14 @@ public class GameOverState extends State implements MouseListener {
             UILoader.isRestartButton = false;
         } else if (UILoader.isMenuButton) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
-                if (e.getY() >= 325 && e.getY() <= 275 + 115) {
-                    gameController.states.pop();
+                if (e.getY() >= 275 && e.getY() <= 275 + 115) {
                     gameController.states.pop();
                 }
             }
             UILoader.isMenuButton = false;
         } else if (UILoader.isQuitButton == true) {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
-                if (e.getY() >= 465 && e.getY() <= 415 + 115) {
+                if (e.getY() >= 410 && e.getY() <= 410 + 115) {
                     System.exit(0);
                 }
             }

@@ -11,11 +11,17 @@ import java.util.HashMap;
 public class SoundLoader {
 
     private static Clip clip;
-//    public static final
+    public static final File BGSFX = new File("src/resources/SFX/BG.wav");
+    public static final File inGameSFX = new File("src/resources/SFX/welcome.wav");
+    public static final File gameOverSFX = new File("src/resources/SFX/gameOver.wav");
+    public static final File normalTowerSFX = new File("src/resources/SFX/normal.wav");
+    public static final File machineTowerSFX = new File("src/resources/SFX/machine.wav");
+    public static final File sniperTowerSFX = new File("src/resources/SFX/sniper.wav");
+    public static final File dieSFX = new File("src/resources/SFX/dieEnemy.wav");
+    public static final File enemyAttackSFX = new File("src/resources/SFX/addEnemy.wav");
 
-    public static void play(String name) {
+    public static void play(File f) {
         try {
-            File f = new File("src/resources/SFX/" + name);
             AudioInputStream stream = AudioSystem.getAudioInputStream(f);
             clip = AudioSystem.getClip();
             clip.open(stream);
@@ -26,18 +32,7 @@ public class SoundLoader {
     }
 
     public static void stop() {
-        if (clip.isRunning()) clip.stop();
+        clip.stop();
     }
 
-    public static float getVolume() {
-        FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        return (float) Math.pow(10f, gainControl.getValue() / 20f);
-    }
-
-    public static void setVolume(float volume) {
-        if (volume < 0f || volume > 1f)
-            throw new IllegalArgumentException("Volume not valid: " + volume);
-        FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        gainControl.setValue(20f * (float) Math.log10(volume));
-    }
 }

@@ -50,6 +50,6 @@ public class MachineGunTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
-        SoundLoader.play("machine.wav");
+        SoundLoader.play(SoundLoader.machineTowerSFX);
     }
 }

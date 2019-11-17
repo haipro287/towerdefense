@@ -162,9 +162,14 @@ public class GameState extends State implements MouseListener {
 
         g2d.drawImage(UILoader.heart, 1050, 30, 40, 40, null);
         g2d.drawImage(UILoader.gold, 1040, 75, 50, 50, null);
+        g2d.drawImage(UILoader.startButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 150, 142, 62, null);
         g2d.drawImage(UILoader.pauseButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
         if (UILoader.isPauseButton) {
             g2d.drawImage(UILoader.pauseButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
+        }
+        if (UILoader.isStartButton) {
+            g2d.drawImage(UILoader.startButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 150, 142, 62, null);
+
         }
 
         //draw tiles map
@@ -200,7 +205,8 @@ public class GameState extends State implements MouseListener {
 
     @Override
     public void run() {
-        tick++;
+        if (UILoader.isStartButton)
+            tick++;
         long cur = System.nanoTime();
         //spawn enemies
 //        if (tick % 200 == 0 && enemies.size() <= 100) {
@@ -223,8 +229,10 @@ public class GameState extends State implements MouseListener {
                 }
                 if (enemies.get(i).destroy()) {
                     invadedEnemy++;
+                    SoundLoader.play(SoundLoader.enemyAttackSFX);
                 }
                 enemies.remove(enemies.get(i));
+                SoundLoader.play(SoundLoader.dieSFX);
             }
         }
 
@@ -280,7 +288,8 @@ public class GameState extends State implements MouseListener {
         if (invadedEnemy > 5) {
             super.gameOver = true;
             gameController.states.pop();
-            SoundLoader.play("gameOver.wav");
+            SoundLoader.stop();
+            SoundLoader.play(SoundLoader.gameOverSFX);
             gameController.states.push(new GameOverState(gameController));
         }
     }
@@ -323,6 +332,8 @@ public class GameState extends State implements MouseListener {
         if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
             if (e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                 UILoader.isPauseButton = true;
+            } else if (e.getY() >= GameConfig.SCREEN_HEIGHT - 150 && e.getY() <= GameConfig.SCREEN_HEIGHT - 88) {
+                UILoader.isStartButton = true;
             }
         }
     }
@@ -353,7 +364,7 @@ public class GameState extends State implements MouseListener {
             }
         }
         mouseFlag = 0;
-        if (UILoader.isPauseButton == true) {
+        if (UILoader.isPauseButton) {
             if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
                 if (e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                     //gameController.states.pop();
@@ -362,6 +373,13 @@ public class GameState extends State implements MouseListener {
                 }
             }
             UILoader.isPauseButton = false;
+        } else if (UILoader.isStartButton) {
+            if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
+                if (e.getY() >= GameConfig.SCREEN_HEIGHT - 150 && e.getY() <= GameConfig.SCREEN_HEIGHT - 88) {
+                    tick++;
+                }
+//                UILoader.isStartButton = false;
+            }
         }
     }
 

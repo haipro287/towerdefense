@@ -50,6 +50,6 @@ public class SniperTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
-        SoundLoader.play("sniper.wav");
+        SoundLoader.play(SoundLoader.sniperTowerSFX);
     }
 }
