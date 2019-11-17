@@ -15,6 +15,8 @@ import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
 import towerdefense.entity.tile.tower.SniperTower;
 import towerdefense.resourcesloader.UILoader;
+import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.resourcesloader.SoundLoader;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -138,14 +140,19 @@ public class GameState extends State implements MouseListener {
 
     public void draw(Graphics2D g2d) {
         //draw UI component
-        g2d.drawString(Integer.toString(invadedEnemy) + "/5", 1000, 50);
-        g2d.drawString(Integer.toString(money), 1000, 100);
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(new Font("", Font.BOLD, 20));
+        g2d.drawString(Integer.toString(5 - invadedEnemy), 1025, 57);
+        g2d.drawString(Integer.toString(money), 1010, 110);
         g2d.drawImage(NormalTower.image, 1000, 200, 32, 32, null);
         g2d.drawString(Integer.toString(GameConfig.NORMAL_TOWER_COST), 1050, 225);
         g2d.drawImage(MachineGunTower.image, 1000, 250, 32, 32, null);
         g2d.drawString(Integer.toString(GameConfig.MACHINE_GUN_TOWER_COST), 1050, 275);
         g2d.drawImage(SniperTower.image, 1000, 300, 32, 32, null);
         g2d.drawString(Integer.toString(GameConfig.SNIPER_TOWER_COST), 1050, 325);
+
+        g2d.drawImage(UILoader.heart, 1050, 30, 40, 40, null);
+        g2d.drawImage(UILoader.gold, 1040, 75, 50, 50, null);
         g2d.drawImage(UILoader.pauseButton, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
         if (UILoader.isPauseButton) {
             g2d.drawImage(UILoader.pauseButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 70, 142, 62, null);
@@ -260,6 +267,9 @@ public class GameState extends State implements MouseListener {
         //check game over condition
         if (invadedEnemy > 5) {
             super.gameOver = true;
+            gameController.states.pop();
+            SoundLoader.play("gameOver.wav");
+            gameController.states.push(new GameOverState(gameController));
         }
     }
 

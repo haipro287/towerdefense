@@ -5,6 +5,7 @@ import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.NormalBullet;
 import towerdefense.entity.bullet.SniperBullet;
 import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.resourcesloader.SoundLoader;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -49,5 +50,6 @@ public class SniperTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
+        SoundLoader.play("sniper.wav");
     }
 }

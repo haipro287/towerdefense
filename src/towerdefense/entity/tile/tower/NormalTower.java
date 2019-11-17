@@ -4,6 +4,7 @@ import towerdefense.GameConfig;
 import towerdefense.entity.bullet.AbstractBullet;
 import towerdefense.entity.bullet.NormalBullet;
 import towerdefense.resourcesloader.ImageLoader;
+import towerdefense.resourcesloader.SoundLoader;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -49,5 +50,6 @@ public class NormalTower extends AbstractTower {
         }
         bullet.setFlag(getFlag());
         bullets.add(bullet);
+        SoundLoader.play("normal.wav");
     }
 }
