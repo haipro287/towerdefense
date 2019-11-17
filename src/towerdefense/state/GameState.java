@@ -15,7 +15,6 @@ import towerdefense.entity.tile.tower.MachineGunTower;
 import towerdefense.entity.tile.tower.NormalTower;
 import towerdefense.entity.tile.tower.SniperTower;
 import towerdefense.resourcesloader.UILoader;
-import towerdefense.resourcesloader.ImageLoader;
 import towerdefense.resourcesloader.SoundLoader;
 
 import java.awt.*;
@@ -38,10 +37,12 @@ public class GameState extends State implements MouseListener {
 
     private long start;
     private long tick;
+    private int wave;
 
     public GameState(GameController gameController, String filepath) {
         super(gameController);
         start = System.nanoTime();
+        wave = 1;
         tick = 0;
         mouseFlag = 0;
         invadedEnemy = 0;
@@ -138,6 +139,14 @@ public class GameState extends State implements MouseListener {
         this.tick = tick;
     }
 
+    public int getWave() {
+        return wave;
+    }
+
+    public void setWave(int wave) {
+        this.wave = wave;
+    }
+
     public void draw(Graphics2D g2d) {
         //draw UI component
         g2d.setColor(Color.WHITE);
@@ -194,9 +203,9 @@ public class GameState extends State implements MouseListener {
         tick++;
         long cur = System.nanoTime();
         //spawn enemies
-        if (tick % 200 == 0 && enemies.size() <= 100) {
-            enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
-        }
+//        if (tick % 200 == 0 && enemies.size() <= 100) {
+//            enemies.add(new NormalEnemy(0, 0 * GameConfig.TILE_SIZE, 2 * GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
+//        }
 
         //check if enemies is defeated or destroyed
         for (int i = enemies.size() - 1; i >= 0; i--) {
@@ -248,7 +257,10 @@ public class GameState extends State implements MouseListener {
             } else if (nextY - enemy.getY() < -enemy.getSpeed()) {
                 enemy.setFlag(4);
             } else enemy.setNextWayPoint(enemy.getNextWayPoint() + 1);
-            enemy.move();
+
+            if (enemy.getCreatedTick() <= tick) {
+                enemy.move();
+            }
         }
 
         //check enemies invasion
@@ -309,7 +321,7 @@ public class GameState extends State implements MouseListener {
             }
         }
         if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
-            if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
+            if (e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                 UILoader.isPauseButton = true;
             }
         }
@@ -343,7 +355,7 @@ public class GameState extends State implements MouseListener {
         mouseFlag = 0;
         if (UILoader.isPauseButton == true) {
             if (e.getX() >= GameConfig.SCREEN_WIDTH + 18 && e.getX() <= GameConfig.SCREEN_WIDTH + 160) {
-                if(e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
+                if (e.getY() >= GameConfig.SCREEN_HEIGHT - 70 && e.getY() <= GameConfig.SCREEN_HEIGHT - 8) {
                     //gameController.states.pop();
                     gameController.states.push(new PauseState(gameController));
                     GameStage.save(this, "src/resources/save.json");

@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="update game save/load function,">
-      <change afterPath="$PROJECT_DIR$/src/resources/map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
+    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/UILoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/resourcesloader/UILoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/NormalEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573484410141</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update game save/load function, more enemy type">
+      <created>1574008408109</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574008408109</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +214,8 @@
     <MESSAGE value="change project structure &#10;- game panel, game state,...&#10;- enemeis can follow the path" />
     <MESSAGE value="no more tower in the road" />
     <MESSAGE value="update explode animation when enemies die" />
-    <option name="LAST_COMMIT_MESSAGE" value="update explode animation when enemies die" />
+    <MESSAGE value="update game save/load function, more enemy type" />
+    <option name="LAST_COMMIT_MESSAGE" value="update game save/load function, more enemy type" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -1,4 +1,8 @@
-package towerdefense;
+package towerdefense.state;
+
+import towerdefense.GameConfig;
+import towerdefense.GameController;
+import towerdefense.resourcesloader.UILoader;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -59,11 +63,7 @@ public class GameOverState extends State implements MouseListener {
             if (e.getX() >= 445 && e.getX() <= 445 + 270) {
                 if (e.getY() >= 190 && e.getY() <= 140 + 115) {
                     gameController.states.pop();
-                    try {
-                        gameController.states.push(new GameState(gameController));
-                    } catch (FileNotFoundException ex) {
-                        ex.printStackTrace();
-                    }
+                    gameController.states.push(new GameState(gameController, "src/resources/map.json"));
                 }
             }
             UILoader.isRestartButton = false;

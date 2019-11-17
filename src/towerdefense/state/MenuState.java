@@ -1,14 +1,12 @@
 package towerdefense.state;
 
+import towerdefense.GameConfig;
 import towerdefense.GameController;
+import towerdefense.resourcesloader.UILoader;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import static towerdefense.GameConfig.SCREEN_HEIGHT;
-import static towerdefense.GameConfig.SCREEN_WIDTH;
-import static towerdefense.resourcesloader.UILoader.*;
 
 public class MenuState extends State implements MouseListener {
 

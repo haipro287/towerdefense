@@ -1,8 +1,5 @@
 package towerdefense;
 
-import java.awt.*;
-import java.util.ArrayList;
-
 public final class GameConfig {
     public static final String GAME_NAME = "Tower Defense";
     public static final int TILE_SIZE = 32;
@@ -38,7 +35,7 @@ public final class GameConfig {
     public static final int MACHINE_GUN_TOWER_ATTACK_SPEED = 100;
 
     public static final double NORMAL_BULLET_SPEED = 400.0 / GAME_TPS;
-    public static final int NORMAL_BULLET_DAMAGE = 50;
+    public static final int NORMAL_BULLET_DAMAGE = 20;
 
     public static final double SNIPER_BULLET_SPEED = 700.0 / GAME_TPS;
     public static final int SNIPER_BULLET_DAMAGE = 200;
@@ -54,18 +51,18 @@ public final class GameConfig {
     public static final int NORMAL_ENEMY_REWARD = 5;
 
     public static final int SMALLER_ENEMY_HP = 50;
-    public static final double SMALLER_ENEMY_SPEED = 150 / GAME_TPS;
+    public static final double SMALLER_ENEMY_SPEED = 150.0 / GAME_TPS;
     public static final int SMALLER_ENEMY_ARMOR = 10;
-    public static final int SMALLER_ENEMY_REWARD = 15;
+    public static final int SMALLER_ENEMY_REWARD = 5;
 
     public static final int TANKER_ENEMY_HP = 500;
-    public static final double TANKER_ENEMY_SPEED = 50 / GAME_TPS;
+    public static final double TANKER_ENEMY_SPEED = 50.0 / GAME_TPS;
     public static final int TANKER_ENEMY_ARMOR = 50;
-    public static final int TANKER_ENEMY_REWARD = 30;
+    public static final int TANKER_ENEMY_REWARD = 10;
 
     public static final int BOSS_ENEMY_HP = 5000;
-    public static final double BOSS_ENEMY_SPEED = 10 / GAME_TPS;
+    public static final double BOSS_ENEMY_SPEED = 10.0 / GAME_TPS;
     public static final int BOSS_ENEMY_ARMOR = 100;
-    public static final int BOSS_ENEMY_REWARD = 30;
+    public static final int BOSS_ENEMY_REWARD = 50;
 
 }
