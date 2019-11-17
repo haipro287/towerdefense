@@ -3,42 +3,21 @@
     {
       "enemies": [
         {
-          "flag": 2,
-          "x": 720,
-          "y": 224,
-          "type": "normal",
-          "createdtick": 1200
+          "flag": 1,
+          "x": 298,
+          "y": 96,
+          "type": "tanker",
+          "createdtick": 400
         },
         {
-          "flag": 2,
-          "x": 275,
-          "y": 224,
-          "type": "normal",
-          "createdtick": 1850
-        },
-        {
-          "flag": 2,
-          "x": 234,
-          "y": 224,
-          "type": "normal",
-          "createdtick": 1900
-        },
-        {
-          "flag": 2,
-          "x": 191,
-          "y": 224,
-          "type": "normal",
-          "createdtick": 1950
-        },
-        {
-          "flag": 2,
-          "x": 150,
-          "y": 224,
-          "type": "normal",
-          "createdtick": 2000
+          "flag": 1,
+          "x": 215,
+          "y": 96,
+          "type": "tanker",
+          "createdtick": 600
         }
       ],
-      "id": 1
+      "id": 3
     }
   ],
   "tiles": [
@@ -683,8 +662,8 @@
       0
     ]
   ],
-  "money": 75,
-  "tick": 4639,
+  "money": 999820,
+  "tick": 1116,
   "waypoints": [
     [
       25,
@@ -721,7 +700,27 @@
   ],
   "towers": [
     {
-      "x": 416,
+      "x": 320,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 544,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 448,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 704,
+      "y": 160,
+      "type": "machine"
+    },
+    {
+      "x": 480,
       "y": 288,
       "type": "normal"
     }

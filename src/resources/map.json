@@ -750,9 +750,110 @@
           "flag": 1
         }
       ]
+    },
+    {
+      "id": 2,
+      "enemies": [
+        {
+          "type": "smaller",
+          "createdtick": 200,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "tanker",
+          "createdtick": 600,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "tanker",
+          "createdtick": 1000,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "smaller",
+          "createdtick": 1100,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "normal",
+          "createdtick": 1200,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "smaller",
+          "createdtick": 1800,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "tanker",
+          "createdtick": 1850,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "normal",
+          "createdtick": 1900,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "tanker",
+          "createdtick": 1950,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "normal",
+          "createdtick": 2000,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "enemies": [
+        {
+          "type": "tanker",
+          "createdtick": 400,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "boss",
+          "createdtick": 500,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        },
+        {
+          "type": "tanker",
+          "createdtick": 600,
+          "x": 0,
+          "y": 96,
+          "flag": 1
+        }
+      ]
     }
   ],
   "towers": [],
-  "money": 100,
+  "money": 10000,
   "tick": 0
 }
