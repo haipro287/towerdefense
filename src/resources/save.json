@@ -73,7 +73,7 @@
           "createdtick": 2000
         }
       ],
-      "id": 1
+      "id": 3
     }
   ],
   "tiles": [
@@ -718,8 +718,8 @@
       0
     ]
   ],
-  "money": 100,
-  "tick": 885,
+  "money": 999820,
+  "tick": 1116,
   "waypoints": [
     [
       25,
@@ -754,5 +754,31 @@
       21
     ]
   ],
-  "towers": []
+  "towers": [
+    {
+      "x": 320,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 544,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 448,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 704,
+      "y": 160,
+      "type": "machine"
+    },
+    {
+      "x": 480,
+      "y": 288,
+      "type": "normal"
+    }
+  ]
 }

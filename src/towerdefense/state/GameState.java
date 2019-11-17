@@ -292,6 +292,15 @@ public class GameState extends State implements MouseListener {
             SoundLoader.play(SoundLoader.gameOverSFX);
             gameController.states.push(new GameOverState(gameController));
         }
+
+        if (enemies.size() == 0) {
+            wave++;
+            tick = 0;
+            GameStage.loadWave(this, "src/resources/map.json");
+        }
+        if (getWave() > 3) {
+            gameController.states.pop();
+        }
     }
 
     public boolean addTower(AbstractTower tower) {

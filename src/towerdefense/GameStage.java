@@ -88,30 +88,31 @@ public class GameStage {
         JSONArray waves = (JSONArray) result.get("waves");
         for (int i = 0; i < waves.size(); i++) {
             JSONObject wave = (JSONObject) waves.get(i);
-            gameState.setWave(Integer.parseInt(wave.get("id").toString()));
-            JSONArray enemies = (JSONArray) wave.get("enemies");
-            for (int j = 0; j < enemies.size(); j++) {
-                JSONObject enemy = (JSONObject) enemies.get(j);
-                switch (enemy.get("type").toString()) {
-                    case "normal":
-                        System.out.println(1);
-                        gameState.getEnemies().add(new NormalEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
-                        System.out.println(gameState.getEnemies().get(j).getCreatedTick());
-                        break;
-                    case "smaller":
-                        gameState.getEnemies().add(new SmallerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
-                        break;
-                    case "tanker":
-                        gameState.getEnemies().add(new TankerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
-                        break;
-                    case "boss":
-                        gameState.getEnemies().add(new BossEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
-                        break;
+
+            if (Integer.parseInt(wave.get("id").toString()) == gameState.getWave()) {
+                JSONArray enemies = (JSONArray) wave.get("enemies");
+                for (int j = 0; j < enemies.size(); j++) {
+                    JSONObject enemy = (JSONObject) enemies.get(j);
+                    switch (enemy.get("type").toString()) {
+                        case "normal":
+                            System.out.println(1);
+                            gameState.getEnemies().add(new NormalEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            System.out.println(gameState.getEnemies().get(j).getCreatedTick());
+                            break;
+                        case "smaller":
+                            gameState.getEnemies().add(new SmallerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                        case "tanker":
+                            gameState.getEnemies().add(new TankerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                        case "boss":
+                            gameState.getEnemies().add(new BossEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                    }
                 }
             }
         }
     }
-
 
     public static void save(GameState gameState, String filepath) {
         JSONObject result = new JSONObject();
@@ -196,6 +197,44 @@ public class GameStage {
                 IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public static void loadWave(GameState gameState, String filepath) {
+        JSONParser jsonParser = new JSONParser();
+        JSONObject result = new JSONObject();
+        try (FileReader reader = new FileReader(filepath)) {
+            Object obj = jsonParser.parse(reader);
+            result = (JSONObject) obj;
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        JSONArray waves = (JSONArray) result.get("waves");
+        for (int i = 0; i < waves.size(); i++) {
+            JSONObject wave = (JSONObject) waves.get(i);
+            if (Integer.parseInt(wave.get("id").toString()) == gameState.getWave()) {
+                JSONArray enemies = (JSONArray) wave.get("enemies");
+                for (int j = 0; j < enemies.size(); j++) {
+                    JSONObject enemy = (JSONObject) enemies.get(j);
+                    switch (enemy.get("type").toString()) {
+                        case "normal":
+                            System.out.println(1);
+                            gameState.getEnemies().add(new NormalEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            System.out.println(gameState.getEnemies().get(j).getCreatedTick());
+                            break;
+                        case "smaller":
+                            gameState.getEnemies().add(new SmallerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                        case "tanker":
+                            gameState.getEnemies().add(new TankerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                        case "boss":
+                            gameState.getEnemies().add(new BossEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
+                            break;
+                    }
+
+                }
+            }
+        }
     }
 }

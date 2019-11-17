@@ -7,7 +7,7 @@ import towerdefense.resourcesloader.ImageLoader;
 import java.awt.*;
 
 public class BossEnemy extends AbstractEnemy {
-    private static Image image = ImageLoader.getImage("src/resources/Sprites/run/player-run-1.png");
+    private static Image image = ImageLoader.getImage("src/resources/Sprites/eagle/eagle-attack-1.png");
 
     public BossEnemy(long createdTick, int x, int y, int width, int height, int flag) {
         super(createdTick, x, y, width, height, flag);
