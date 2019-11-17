@@ -72,13 +72,13 @@ public class GameStage {
             JSONObject tower = (JSONObject) towers.get(i);
             switch (tower.get("type").toString()) {
                 case "normal":
-                    gameState.getTowers().add(new NormalTower(0, Integer.parseInt(tower.get("x").toString()), Integer.parseInt(tower.get("x").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+                    gameState.getTowers().add(new NormalTower(0, Integer.parseInt(tower.get("x").toString()), Integer.parseInt(tower.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
                     break;
                 case "machine":
                     gameState.getTowers().add(new MachineGunTower(0, Integer.parseInt(tower.get("x").toString()), Integer.parseInt(tower.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
                     break;
                 case "sniper":
-                    gameState.getTowers().add(new SniperTower(0, Integer.parseInt(tower.get("x").toString()), Integer.parseInt(tower.get("x").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
+                    gameState.getTowers().add(new SniperTower(0, Integer.parseInt(tower.get("x").toString()), Integer.parseInt(tower.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE));
                     break;
             }
             gameState.getBullets().add(new ArrayList<>());
@@ -95,17 +95,17 @@ public class GameStage {
                 switch (enemy.get("type").toString()) {
                     case "normal":
                         System.out.println(1);
-                        gameState.getEnemies().add(new NormalEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
+                        gameState.getEnemies().add(new NormalEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
                         System.out.println(gameState.getEnemies().get(j).getCreatedTick());
                         break;
                     case "smaller":
-                        gameState.getEnemies().add(new SmallerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
+                        gameState.getEnemies().add(new SmallerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
                         break;
                     case "tanker":
-                        gameState.getEnemies().add(new TankerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
+                        gameState.getEnemies().add(new TankerEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
                         break;
                     case "boss":
-                        gameState.getEnemies().add(new BossEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, 1));
+                        gameState.getEnemies().add(new BossEnemy((Long) enemy.get("createdtick"), Integer.parseInt(enemy.get("x").toString()), Integer.parseInt(enemy.get("y").toString()), GameConfig.TILE_SIZE, GameConfig.TILE_SIZE, Integer.parseInt(enemy.get("flag").toString())));
                         break;
                 }
             }
@@ -155,16 +155,45 @@ public class GameStage {
             if (gameState.getTowers().get(i) instanceof SniperTower) {
                 tower.put("type", "sniper");
             }
-            tower.put("x", gameState.getTowers().get(i).getX());
-            tower.put("y", gameState.getTowers().get(i).getY());
+            tower.put("x", (int) gameState.getTowers().get(i).getX());
+            tower.put("y", (int) gameState.getTowers().get(i).getY());
             towers.add(tower);
         }
         result.put("towers", towers);
+        //save enemies
+        JSONArray waves = new JSONArray();
+        JSONObject wave = new JSONObject();
+        JSONArray enemies = new JSONArray();
+        for (int i = 0; i < gameState.getEnemies().size(); i++) {
+            JSONObject enemy = new JSONObject();
+            if (gameState.getEnemies().get(i) instanceof NormalEnemy) {
+                enemy.put("type", "normal");
+            } else if (gameState.getEnemies().get(i) instanceof SmallerEnemy) {
+                enemy.put("type", "smaller");
+            } else if (gameState.getEnemies().get(i) instanceof TankerEnemy) {
+                enemy.put("type", "tanker");
+            } else if (gameState.getEnemies().get(i) instanceof BossEnemy) {
+                enemy.put("type", "boss");
+            }
+            enemy.put("createdtick", gameState.getEnemies().get(i).getCreatedTick());
+            enemy.put("x", (int) gameState.getEnemies().get(i).getX());
+            enemy.put("y", (int) gameState.getEnemies().get(i).getY());
+            enemy.put("flag", gameState.getEnemies().get(i).getFlag());
+            enemies.add(enemy);
+        }
+        wave.put("enemies", enemies);
+        wave.put("id", gameState.getWave());
+        waves.add(wave);
+        result.put("waves", waves);
+
+        result.put("money", gameState.getMoney());
+        result.put("tick", gameState.getTick());
 
         try (FileWriter file = new FileWriter(filepath)) {
             file.write(result.toJSONString());
             file.flush();
-        } catch (IOException e) {
+        } catch (
+                IOException e) {
             e.printStackTrace();
         }
 

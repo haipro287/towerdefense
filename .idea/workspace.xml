@@ -5,11 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574008408109</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update game save/load function">
+      <created>1574016962160</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574016962160</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,7 +221,8 @@
     <MESSAGE value="no more tower in the road" />
     <MESSAGE value="update explode animation when enemies die" />
     <MESSAGE value="update game save/load function, more enemy type" />
-    <option name="LAST_COMMIT_MESSAGE" value="update game save/load function, more enemy type" />
+    <MESSAGE value="update game save/load function" />
+    <option name="LAST_COMMIT_MESSAGE" value="update game save/load function" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

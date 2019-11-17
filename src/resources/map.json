@@ -683,61 +683,71 @@
           "type": "normal",
           "createdtick": 200,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 600,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1000,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1100,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1200,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1800,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1850,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1900,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 1950,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         },
         {
           "type": "normal",
           "createdtick": 2000,
           "x": 0,
-          "y": 96
+          "y": 96,
+          "flag": 1
         }
       ]
     }
