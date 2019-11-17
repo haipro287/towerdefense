@@ -12,6 +12,7 @@ public class UILoader {
     public static Image playButtonClick = ImageLoader.getImage("src/resources/Sprites/playButtonClick.png");
     public static Image quitButton = ImageLoader.getImage("src/resources/Sprites/quitButton.png");
     public static Image quitButtonClick = ImageLoader.getImage("src/resources/Sprites/quitButtonClick.png");
+    //
 
     //image GameState
     public static Image pauseButton = ImageLoader.getImage("src/resources/Sprites/pauseButton.png");
