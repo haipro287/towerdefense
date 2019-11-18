@@ -34,7 +34,7 @@ public class UILoader {
     public static Image restartButtonClick = ImageLoader.getImage("src/resources/Sprites/restartButtonClick.png");
 
     public static Image imageOfMenu = ImageLoader.getImage("src/resources/Sprites/imageMenu.png");
-    public static Image imageOfPause = ImageLoader.getImage("src/resources/Sprites/PauseState/imagePause.png");
+    public static Image BG = ImageLoader.getImage("src/resources/Sprites/BG.png");
 
     public static Image quitButton = ImageLoader.getImage("src/resources/Sprites/quitButton.png");
     public static Image quitButtonClick = ImageLoader.getImage("src/resources/Sprites/quitButtonClick.png");

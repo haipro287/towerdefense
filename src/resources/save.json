@@ -4,14 +4,14 @@
       "enemies": [
         {
           "flag": 1,
-          "x": 571,
+          "x": 0,
           "y": 96,
           "type": "normal",
           "createdtick": 200
         },
         {
           "flag": 1,
-          "x": 238,
+          "x": 0,
           "y": 96,
           "type": "normal",
           "createdtick": 600
@@ -73,7 +73,7 @@
           "createdtick": 2000
         }
       ],
-      "id": 3
+      "id": 1
     }
   ],
   "tiles": [
@@ -718,8 +718,8 @@
       0
     ]
   ],
-  "money": 999820,
-  "tick": 1116,
+  "money": 10000,
+  "tick": 0,
   "waypoints": [
     [
       25,
@@ -754,31 +754,5 @@
       21
     ]
   ],
-  "towers": [
-    {
-      "x": 320,
-      "y": 160,
-      "type": "normal"
-    },
-    {
-      "x": 544,
-      "y": 160,
-      "type": "normal"
-    },
-    {
-      "x": 448,
-      "y": 160,
-      "type": "normal"
-    },
-    {
-      "x": 704,
-      "y": 160,
-      "type": "machine"
-    },
-    {
-      "x": 480,
-      "y": 288,
-      "type": "normal"
-    }
-  ]
+  "towers": []
 }

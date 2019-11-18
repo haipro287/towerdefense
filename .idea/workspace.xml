@@ -1,74 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="now have 3 waves of enemy">
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/cherry/cherry-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/eagle/eagle-attack-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/eagle/eagle-attack-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/eagle/eagle-attack-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/eagle/eagle-attack-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/enemy-death/enemy-death-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/idle/frog-idle-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/idle/frog-idle-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/idle/frog-idle-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/idle/frog-idle-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/jump/frog-jump-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/frog/jump/frog-jump-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/gem/gem-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/gem/gem-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/gem/gem-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/gem/gem-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/gem/gem-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/item-feedback/item-feedback-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/item-feedback/item-feedback-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/item-feedback/item-feedback-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/item-feedback/item-feedback-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/opossum/opossum-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/climb/player-climb-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/climb/player-climb-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/climb/player-climb-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/crouch/player-crouch-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/crouch/player-crouch-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/hurt/player-hurt-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/hurt/player-hurt-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/idle/player-idle-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/idle/player-idle-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/idle/player-idle-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/idle/player-idle-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/jump/player-jump-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/jump/player-jump-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/player/run/player-run-6.png" afterDir="false" />
+    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/BG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Sprites/nextWave.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Sprites/nextWaveButton.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/BossEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/SmallerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/entity/enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/resourcesloader/UILoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/resourcesloader/UILoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/SmallerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/TankerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/resources/Sprites/nextWaveButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/towerdefense/entity/enemy/BossEnemy.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +233,8 @@
     <MESSAGE value="update explode animation when enemies die" />
     <MESSAGE value="update game save/load function, more enemy type" />
     <MESSAGE value="update game save/load function" />
-    <option name="LAST_COMMIT_MESSAGE" value="update game save/load function" />
+    <MESSAGE value="-update GameState : add StartButton.&#10;-edit MenuState : edit mainMenu." />
+    <option name="LAST_COMMIT_MESSAGE" value="-update GameState : add StartButton.&#10;-edit MenuState : edit mainMenu." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

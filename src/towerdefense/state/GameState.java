@@ -152,7 +152,8 @@ public class GameState extends State implements MouseListener {
         g2d.setColor(Color.WHITE);
         g2d.setFont(new Font("", Font.BOLD, 20));
         g2d.drawString(Integer.toString(5 - invadedEnemy), 1025, 57);
-        g2d.drawString(Integer.toString(money), 1010, 110);
+        g2d.drawString(Integer.toString(money), 1005, 110);
+        g2d.drawString("WAVE : " + Integer.toString(wave) + "/3", 1000, 160);
         g2d.drawImage(NormalTower.image, 1000, 200, 32, 32, null);
         g2d.drawString(Integer.toString(GameConfig.NORMAL_TOWER_COST), 1050, 225);
         g2d.drawImage(MachineGunTower.image, 1000, 250, 32, 32, null);
@@ -169,7 +170,6 @@ public class GameState extends State implements MouseListener {
         }
         if (UILoader.isStartButton) {
             g2d.drawImage(UILoader.startButtonClick, GameConfig.SCREEN_WIDTH + 18, GameConfig.SCREEN_HEIGHT - 150, 142, 62, null);
-
         }
 
         //draw tiles map
@@ -296,6 +296,7 @@ public class GameState extends State implements MouseListener {
         if (enemies.size() == 0) {
             wave++;
             tick = 0;
+            UILoader.isStartButton = false;
             GameStage.loadWave(this, "src/resources/map.json");
         }
         if (getWave() > 3) {
@@ -387,7 +388,6 @@ public class GameState extends State implements MouseListener {
                 if (e.getY() >= GameConfig.SCREEN_HEIGHT - 150 && e.getY() <= GameConfig.SCREEN_HEIGHT - 88) {
                     tick++;
                 }
-//                UILoader.isStartButton = false;
             }
         }
     }

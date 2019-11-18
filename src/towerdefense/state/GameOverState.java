@@ -23,6 +23,7 @@ public class GameOverState extends State implements MouseListener {
 
     @Override
     public void draw(Graphics2D g2d) {
+        g2d.drawImage(UILoader.BG, 0, 0, GameConfig.SCREEN_WIDTH + 200, GameConfig.SCREEN_HEIGHT + 39, null);
         g2d.drawImage(UILoader.gameOver, GameConfig.SCREEN_WIDTH / 3 + 10, 50, 500, 500, null);
         g2d.drawImage(UILoader.restartButton, 445, 140, 270, 115, null);
         g2d.drawImage(UILoader.menuButton, 445, 275, 270, 115, null);
