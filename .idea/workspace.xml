@@ -22,21 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="-update GameState : add StartButton.&#10;-edit MenuState : edit mainMenu.">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d7250bad-c951-4cf6-b4ba-e5d910dfe64c" name="Default Changelist" comment="create new thread to take control FPS">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/map1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameOverState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/towerdefense/state/PauseState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/resources/Sprites/restartButton.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/resources/Sprites/restartButtonClick.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/resources/Sprites/run/player-run-2.png" beforeDir="false" />
@@ -726,7 +714,8 @@
       <workItem from="1620203272604" duration="3000" />
       <workItem from="1620347589218" duration="121000" />
       <workItem from="1641724271797" duration="1296000" />
-      <workItem from="1641732882361" duration="6192000" />
+      <workItem from="1641732882361" duration="6259000" />
+      <workItem from="1641739251564" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="Create a map from txt file">
       <created>1572521896095</created>
@@ -805,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574026076498</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="create new thread to take control FPS">
+      <created>1641739155912</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641739155912</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -837,7 +833,8 @@
     <MESSAGE value="update game save/load function, more enemy type" />
     <MESSAGE value="update game save/load function" />
     <MESSAGE value="-update GameState : add StartButton.&#10;-edit MenuState : edit mainMenu." />
-    <option name="LAST_COMMIT_MESSAGE" value="-update GameState : add StartButton.&#10;-edit MenuState : edit mainMenu." />
+    <MESSAGE value="create new thread to take control FPS" />
+    <option name="LAST_COMMIT_MESSAGE" value="create new thread to take control FPS" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
