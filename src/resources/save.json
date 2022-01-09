@@ -6,28 +6,28 @@
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "smaller",
           "createdtick": 200
         },
         {
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "tanker",
           "createdtick": 600
         },
         {
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "tanker",
           "createdtick": 1000
         },
         {
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "smaller",
           "createdtick": 1100
         },
         {
@@ -41,14 +41,14 @@
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "smaller",
           "createdtick": 1800
         },
         {
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "tanker",
           "createdtick": 1850
         },
         {
@@ -62,7 +62,7 @@
           "flag": 1,
           "x": 0,
           "y": 96,
-          "type": "normal",
+          "type": "tanker",
           "createdtick": 1950
         },
         {
@@ -73,7 +73,7 @@
           "createdtick": 2000
         }
       ],
-      "id": 1
+      "id": 2
     }
   ],
   "tiles": [
@@ -718,7 +718,7 @@
       0
     ]
   ],
-  "money": 10000,
+  "money": 9900,
   "tick": 0,
   "waypoints": [
     [
@@ -754,5 +754,16 @@
       21
     ]
   ],
-  "towers": []
+  "towers": [
+    {
+      "x": 192,
+      "y": 160,
+      "type": "normal"
+    },
+    {
+      "x": 512,
+      "y": 288,
+      "type": "machine"
+    }
+  ]
 }

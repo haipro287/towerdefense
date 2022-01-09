@@ -315,8 +315,8 @@ public class GameState extends State implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getX());
-        System.out.println(e.getY());
+//        System.out.println(e.getX());
+//        System.out.println(e.getY());
     }
 
     @Override
